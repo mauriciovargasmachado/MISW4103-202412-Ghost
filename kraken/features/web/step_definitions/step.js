@@ -58,3 +58,26 @@ Then('I expect to see {kraken-string}', async function (message) {
     let element = await this.driver.$('span.green');
     return await element.getValue() == message;
 });
+
+
+//Prueba Post
+When('I start to create a new post', async function() {
+    let element = await this.driver.$('a[href="#/editor/post/"]');
+    return await element.click();
+})
+
+When('I fill the post form title with {kraken-string}', async function (title) {
+    let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
+    await element.setValue(title);
+    let e = this.driver.$('.kg-prose');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element2 = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+    return await element2.setValue("");  
+});
+
+When('I click the Publish Post button', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view');
+    return await element.click();
+})
+

@@ -9,6 +9,10 @@
     "EMPTY_PAGE_TITLE": "",
     "VALID_PAGE_BODY": "Cuerpo de la página",
     "EMPTY_PAGE_BODY": "",
+    "VALID_POST_TITLE": "Primer post automatizado",
+    "EMPTY_POST_TITLE": "",
+    "VALID_POST_BODY": "Esta es una prueba ",
+    "EMPTY_POST_BODY": "",
     "PUBLISH_PAGE_SUCCESS_MESSAGE": "Boom. It’s out there.",
     "SCHEDULE_PAGE_SUCCESS_MESSAGE": "All set!"
 }
