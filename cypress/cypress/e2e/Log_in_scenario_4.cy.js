@@ -20,8 +20,8 @@ describe('Iniciar sesión con contraseña equivocada', () => {
       cy.get('.forgotten-link.gh-btn.gh-btn-link.gh-btn-icon.ember-view').click()
       cy.wait(2000)
   
-      // I wait for a message that show the email address is <INVALID_EMAIL> 
-      cy.get('p.main-error').should('be.visible').contains('Failed to send email. Reason: Sending failed.')
+      // I wait for a message that show a message has been sent or failed to send email 
+      cy.get('p.main-error').should('be.visible').contains(Cypress.env('Failed to send email. Reason: Sending failed'))
 
     })
   })

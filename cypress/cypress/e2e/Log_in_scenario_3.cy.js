@@ -20,8 +20,8 @@ describe('Iniciar sesión con contraseña equivocada', () => {
       cy.get('button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.ember-view').click()
       cy.wait(2000)
   
-      // I wait for a message that show the email address is <INVALID_EMAIL> 
-      cy.get('p.main-error').should('be.visible').contains('Your password is incorrect.')
+      // I wait for a message that show the password address is <INVALID_EMAIL> 
+      cy.get('p.main-error').should('be.visible').contains(Cypress.env('INVALID_PASSWORD_MESSAGE'))
 
     })
   })
