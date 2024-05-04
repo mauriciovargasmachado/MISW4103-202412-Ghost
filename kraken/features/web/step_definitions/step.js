@@ -99,4 +99,14 @@ When('I fill the post adding a divider', async function () {
     let element2 = await this.driver.$('ul[role=menu]')
     return element2.click()
 });
+//Create Post scenario 4
+When('I fill the post adding a button', async function () {
+    let e = this.driver.$('.kg-prose');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+    await element.setValue('/button');
+    let element2 = await this.driver.$('ul[role=menu]')
+    return element2.click()
+});
 
