@@ -109,4 +109,22 @@ When('I fill the post adding a button', async function () {
     let element2 = await this.driver.$('ul[role=menu]')
     return element2.click()
 });
+//Create Tag scenario 1
+When('I start to create a new tag', async function () {
+    let element = await this.driver.$('a[href="#/tags/new/"]');
+    return await element.click();
+});
+When('I fill the tag form title with {kraken-string}', async function (title) {
+    let element = await this.driver.$('.gh-input');
+    return await element.setValue(title);
+});
+When('I click the Publish tag button', async function () {
+    let element = await this.driver.$('.gh-btn.gh-btn-primary.gh-btn-icon.ember-view');
+    return await element.click();
+});
+//Create Tag scenario 2
+When('I fill the tag color with {kraken-string}', async function (color) {
+    let element = await this.driver.$('input[name="accent-color"]');
+    return await element.setValue(color);
+});
 
