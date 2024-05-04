@@ -89,4 +89,14 @@ When('I fill the post form body with {kraken-string}', async function (body) {
     let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
     return await element.setValue(body);
 });
+//Create Post scenario 3
+When('I fill the post adding a divider', async function () {
+    let e = this.driver.$('.kg-prose');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+    await element.setValue('/hr');
+    let element2 = await this.driver.$('ul[role=menu]')
+    return element2.click()
+});
 
