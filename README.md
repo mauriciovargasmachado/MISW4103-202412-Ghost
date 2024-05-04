@@ -1,9 +1,9 @@
 # Pruebas automatizadas en Ghost
 Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automatizadas de software de la maestría MISO de la Universidad de los Andes. A continuación se detallan los contenidos solicitados.
 
-- [Integrantes del equipo](#Integrantes)
-- [Ejecutar pruebas con Cypress](#Ejecutar-pruebas-con-Cypress)
-- [Ejecutar pruebas con Kraken](#Ejecutar-pruebas-con-Kraken)
+- [🙋‍♂️ Integrantes del equipo](#Integrantes)
+- [💻 Ejecutar pruebas con Cypress](#Ejecutar-pruebas-con-Cypress)
+- [💻 Ejecutar pruebas con Kraken](#Ejecutar-pruebas-con-Kraken)
 
 ---
 
@@ -18,7 +18,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 
 ---
 
-# 💻 Ejecutar pruebas con Cypress
+# Ejecutar pruebas con Cypress
 Estas instrucciones le servirán para poder obtener una copia funcional del proyecto en su máquina local y ejecutar las pruebas correspondientes a __Cypress__.
 
 ## 📝 Requisitos
@@ -68,7 +68,7 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 
 ---
 
-# 💻 Ejecutar pruebas con Kraken
+# Ejecutar pruebas con Kraken
 Estas instrucciones le servirán para poder obtener una copia funcional del proyecto en su máquina local y ejecutar las pruebas correspondientes a __Kraken__.
 
 ## 📝 Requisitos
