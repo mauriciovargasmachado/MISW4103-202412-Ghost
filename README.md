@@ -7,7 +7,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 
 ---
 
-### Integrantes
+# Integrantes
 
 | Nombre                 | Correo                       |
 |------------------------|------------------------------|
