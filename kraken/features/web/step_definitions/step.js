@@ -44,6 +44,17 @@ When('I click the Publish button', async function() {
     return await element.click();
 })
 
+When('I schedule the publication of the page', async function() {
+    let element = await this.driver.$('button.gh-publish-setting-title');
+    return await element.click();
+})
+
+When('I set the schedule date and time', async function() {
+    //let element = await this.driver.$('div[data-test-radio="schedule"]');
+    let element = await this.driver.$('div > fieldset > div > div:nth-child(2)');
+    return await element.click();
+})
+
 When('I click the Final Review button', async function() {
     let element = await this.driver.$('button.gh-btn.gh-btn-black.gh-btn-large');
     return await element.click();
