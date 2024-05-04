@@ -25,6 +25,9 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 
 * Node (Para esta guía se utilizó la versión __18.17.1__) ✅
 * npm (Para esta guía se utilizó la versión __9.6.7__) ✅
+* Un navegador web (Para esta guía se utilizó Chrome en su versión __124.0.6367.119__) ✅
+
+❗❗ Esta guía fue realizada usando el sistema operativo `Windows 10 Pro`.
 
 ## 🛠️ Pasos a ejecutar
 
@@ -75,6 +78,9 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 
 * Node (Para esta guía se utilizó la versión __18.17.1__) ✅
 * npm (Para esta guía se utilizó la versión __9.6.7__) ✅
+* Un navegador web (Para esta guía se utilizó Chrome en su versión __124.0.6367.119__) ✅
+
+❗❗ Esta guía fue realizada usando el sistema operativo `Windows 10 Pro`.
 
 ## 🛠️ Pasos a ejecutar
 
