@@ -170,7 +170,7 @@ Then('I expect the dashboard to be visible', async function() {
 
 Then('I expect to see a message with {kraken-string}', async function (message) {
     let element = await this.driver.$('.main-error');
-    return await element.getValue() == message;
+    assert(text.includes(message));
 });
 
 //Log in scenario 3
@@ -189,6 +189,11 @@ When('I try to click forget', async function() {
 
 
 //Create Tag scenario 3
+
+When('I navigate to ghost page', async function() {
+    let element = await this.driver.$('.gh-canvas-title');
+    return await element.getValue() == "Dashboard";
+});
 
 When('I fill the tag description with {kraken-string}', async function (description) {
     let element = await this.driver.$('#tag-description');

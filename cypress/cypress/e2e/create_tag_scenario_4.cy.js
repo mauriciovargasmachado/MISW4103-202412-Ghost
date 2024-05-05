@@ -19,7 +19,7 @@ describe('Funcionalidad: Crear tag', () => {
       //Then post page
       cy.visit(Cypress.env('GHOST_TAG_URL'))
     })
-    it('Crear tag con un titulo y un color', ()=>{
+    it('Crear un tag con descripción valida >500 caracteres', ()=>{
 
         //Create a new tag with a title and color
         cy.get('a[href="#/tags/new/"]').eq(0).click()

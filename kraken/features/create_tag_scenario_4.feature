@@ -18,7 +18,7 @@ Scenario: Crear un tag con descripción valida >500 caracteres
   And I wait for the dashboard to be visible
   And I wait for 2 seconds
 
-  When I navigate to page "<GHOST_TAGS_URL>"
+  And I navigate to ghost page "<GHOST_TAGS_URL>"
   And I wait for 2 seconds
 
   And I start to create a new tag
