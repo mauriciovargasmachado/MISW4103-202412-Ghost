@@ -1,6 +1,4 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const { faker } = require('@faker-js/faker');
-const assert = require('assert');
 
 Given('I fill the login form email with {kraken-string}', async function (username) {
     let element = await this.driver.$('#identification');
@@ -141,99 +139,69 @@ When('I fill the tag color with {kraken-string}', async function (color) {
     return await element.setValue(color);
 });
 
-// Create Member
-var email = faker.internet.email();
-When('I start to create a new member', async function() {
-    let element = await this.driver.$('a[href="#/members/new/"]');
+
+
+//Log in scenario 1
+
+When('I fill the login with right email with {kraken-string}', async function (username) {
+    let element = await this.driver.$('#identification');
+    console.log(username);
+    return await element.setValue(username);
+});
+
+When('I fill the login form with the correct password with {kraken-string}', async function (password) {
+    let element = await this.driver.$('#password');
+    return await element.setValue(password);
+});
+
+When('I try to click login', async function() {
+    let element = await this.driver.$('#ember5');
     return await element.click();
 })
 
-When('I wait for the members to be visible', async function() {
-    let element = await this.driver.$('h2.gh-canvas-title');
-    let text = await element.getText();
-    assert(text == "Members");
-})
-
-When('I fill the member name with random data', async function () {
-    let element = await this.driver.$('input[name="name"]');
-    return await element.setValue(faker.person.fullName());
+Then('I expect the dashboard to be visible', async function() {
+    let element = await this.driver.$('.gh-canvas-title');
+    return await element.getValue() == "Dashboard";
 });
 
-When('I fill the member email with random data', async function () {
-    let element = await this.driver.$('input[name="email"]');
-    return await element.setValue(email);
+//Log in scenario 2
+
+Then('I expect to see a message with {kraken-string}', async function (message) {
+    let element = await this.driver.$('.main-error');
+    return await element.getValue() == message;
 });
 
-When('I fill the member note with random data', async function () {
-    let element = await this.driver.$('textarea[name="note"]');
-    return await element.setValue(faker.string.alphanumeric(150));
+//Log in scenario 3
+
+When('I fill the login form with the wrong password with {kraken-string}', async function (password) {
+    let element = await this.driver.$('#password');
+    return await element.setValue(password);
 });
 
-When('I click on the save member button', async function() {
-    let element = await this.driver.$('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view');
+//Log in scenario 4
+
+When('I try to click forget', async function() {
+    let element = await this.driver.$('#ember4');
     return await element.click();
 })
 
-When('I check the member creation message contains {kraken-string}', async function (message) {
-    let element = await this.driver.$('div.gh-member-details-attribution p');
-    let text = await element.getText();
-    assert(text.includes(message));
+
+//Create Tag scenario 3
+
+When('I fill the tag description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('#tag-description');
+    return await element.setValue(description);
 });
 
-When('I check the new member in the members list', async function () {
-    let emails = [];
-    let rows = await this.driver.$$('div table.gh-list tbody tr');
-    for (let i = 0; i < rows.length; i++) {
-        let link = await rows[i].$('a');
-        let paragraphs = await link.$$('p');
-        for (let j = 0; j < paragraphs.length; j++) {
-            let text = await paragraphs[j].getText();
-            emails.push(text);
-        }
-    }
-    console.log("Emails\n", emails);
-    assert(emails.includes(email));
+Then('I expect to see <=500 characters with {kraken-string}', async function (message) {
+    let element = await this.driver.$('#tag-description');
+    return await element.getValue() <=500;
 });
 
-When('I fill the member note with a lot of data', async function () {
-    let element = await this.driver.$('textarea[name="note"]');
-    return await element.setValue(faker.string.alphanumeric(501));
-});
 
-When('I fill the member email with invalid data', async function () {
-    let element = await this.driver.$('input[name="email"]');
-    return await element.setValue(faker.word.sample());
-});
+//Create Tag scenario 4
 
-Then('I expect the member creation message contains {kraken-string}', async function (message) {
-    let element = await this.driver.$('div.gh-member-details-attribution p');
-    let text = await element.getText();
-    assert(text.includes(message));
-});
-
-Then('I expect the new member in the members list', async function () {
-    let emails = [];
-    let rows = await this.driver.$$('div table.gh-list tbody tr');
-    for (let i = 0; i < rows.length; i++) {
-        let link = await rows[i].$('a');
-        let paragraphs = await link.$$('p');
-        for (let j = 0; j < paragraphs.length; j++) {
-            let text = await paragraphs[j].getText();
-            emails.push(text);
-        }
-    }
-    console.log("Emails\n", emails);
-    assert(emails.includes(email));
-});
-
-Then('I expect the error member creation message contains {kraken-string}', async function (message) {
-    let element = await this.driver.$('div.form-group.max-width.error p.response');
-    let text = await element.getText();
-    assert(text.includes(message));
-});
-
-Then('I expect the member note error message contains {kraken-string}', async function (message) {
-    let element = await this.driver.$('div.form-group.gh-member-note.error p.response');
-    let text = await element.getText();
-    assert(text.includes(message));
+Then('I expect to be fill with >500 characters with {kraken-string}', async function (message) {
+    let element = await this.driver.$('#tag-description');
+    return await element.getValue() >500;
 });

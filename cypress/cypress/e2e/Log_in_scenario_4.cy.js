@@ -1,4 +1,4 @@
-describe('Iniciar sesión con contraseña equivocada', () => {
+describe('Olvido su contraseña', () => {
     beforeEach(() => {
 
         // Go to Ghost login screen.
@@ -8,7 +8,7 @@ describe('Iniciar sesión con contraseña equivocada', () => {
       cy.wait(2000)
     })
   
-    it('Ingresar usuario y contraseña correctas.', () => {
+    it('Ingresar usuario correcto y contraseña contraseña equivocada y da click en olvido su contraseña.', () => {
 
         // Fill the email input with the right user-email.
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
