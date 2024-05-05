@@ -10,5 +10,5 @@ Scenario: Iniciar sesión con el correo electrónico equivocado.
   And I fill the login form with the correct password with "<GHOST_PASSWORD>"
   And I wait for 2 seconds
   And I try to click login
-  And I wait for 2 seconds
+  And I wait for 3 seconds
   Then I expect to see a message with "<INVALID_EMAIL_ADDRESS_MESSAGE>"

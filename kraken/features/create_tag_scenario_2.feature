@@ -14,11 +14,11 @@ Scenario: Publicar un tag con titulo y un color
   When I navigate to page "<GHOST_TAGS_URL>"
   And I wait for 2 seconds
   And I start to create a new tag
-  And I wait for 2 seconds
-  And I fill the tag form title with "<VALID_TAG_TITLE>"
-  And I wait for 1 seconds
-  And I fill the tag color with "<VALID_TAG_COLOR>"
-  And I wait for 1 seconds
-  And I click the Publish tag button
   And I wait for 3 seconds
+  And I fill the tag form title with "<VALID_TAG_TITLE>"
+  And I wait for 2 seconds
+  And I fill the tag color with "<VALID_TAG_COLOR>"
+  And I wait for 2 seconds
+  And I click the Publish tag button
+  And I wait for 7 seconds
   Then I navigate to page "<GHOST_TAGS_URL>"

@@ -18,10 +18,10 @@ describe('Olvido su contraseña', () => {
 
       // Click on login button.
       cy.get('.forgotten-link.gh-btn.gh-btn-link.gh-btn-icon.ember-view').click()
-      cy.wait(2000)
+      cy.wait(30000)
   
       // I wait for a message that show a message has been sent or failed to send email 
-      cy.get('p.main-error').should('be.visible').contains(Cypress.env('Failed to send email. Reason: Sending failed'))
+      cy.get('p.main-error').should('be.visible').contains(Cypress.env('FORGOT_YOUR_EMAIL_MESSAGE'))
 
     })
   })

@@ -10,5 +10,5 @@ Scenario: Iniciar sesión con contraseña equivocada.
   And I fill the login form with the wrong password with "<GHOST_WRONG_PASSWORD>"
   And I wait for 2 seconds
   And I try to click login
-  And I wait for 2 seconds
+  And I wait for 3 seconds
   Then I expect to see a message with "<INVALID_PASSWORD_MESSAGE>"

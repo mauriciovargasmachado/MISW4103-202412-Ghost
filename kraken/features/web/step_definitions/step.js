@@ -20,7 +20,8 @@ Given('I try to login', async function() {
 
 Given('I wait for the dashboard to be visible', async function() {
     let element = await this.driver.$('.gh-canvas-title');
-    assert(element.getValue().includes("Dashboard"));
+    let text = await element.getText();
+    assert(text == "Let’s get started!");
 })
 
 When('I start to create a new page', async function() {
@@ -69,7 +70,8 @@ When('I click the Publish Page button', async function() {
 
 Then('I expect to see {kraken-string}', async function (message) {
     let element = await this.driver.$('span.green');
-    assert(element.getValue().includes(message));
+    let text = await element.getText();
+    assert(text == message);
 });
 
 
@@ -163,13 +165,15 @@ When('I try to click login', async function() {
 
 Then('I expect the dashboard to be visible', async function() {
     let element = await this.driver.$('.gh-canvas-title');
-    assert(element.getValue().includes("Dashboard"));
+    let text = await element.getText();
+    assert(text == "Let’s get started!");
 });
 
 //Log in scenario 2
 
 Then('I expect to see a message with {kraken-string}', async function (message) {
     let element = await this.driver.$('.main-error');
+    let text = await element.getText();
     assert(text.includes(message));
 });
 
@@ -192,7 +196,8 @@ When('I try to click forget', async function() {
 
 When('I navigate to ghost page', async function() {
     let element = await this.driver.$('.gh-canvas-title');
-    assert(element.getValue().includes("Dashboard"));
+    let text = await element.getText();
+    assert(text == "Let’s get started!");
 });
 
 When('I fill the tag description with {kraken-string}', async function (description) {
@@ -208,10 +213,12 @@ Then('I expect to see <=500 characters with {kraken-string}', async function (me
 
 //Create Tag scenario 4
 
-Then('I expect to be fill with >500 characters with {kraken-string}', async function (message) {
-    let element = await this.driver.$('#tag-description');
-    return await element.getValue() >500;
+Then('I expect to an length error to show', async function () {
+    let element = await this.driver.$('div.form-group.no-margin.error p.response');
+    let text = await element.getText();
+    assert(text == "Description cannot be longer than 500 characters.");
 });
+
 
 // Create Member
 var email = faker.internet.email();

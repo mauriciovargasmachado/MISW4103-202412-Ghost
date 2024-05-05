@@ -28,5 +28,5 @@ Scenario: Crear una página con título y descripción válidos y programar su p
   And I click the Final Review button
   And I wait for 3 seconds
   And I click the Publish Page button
-  And I wait for 3 seconds
+  And I wait for 7 seconds
   Then I expect to see "<SCHEDULE_PAGE_SUCCESS_MESSAGE>"

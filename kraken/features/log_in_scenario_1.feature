@@ -10,5 +10,5 @@ Scenario: Iniciar sesión satisfactoriamente
   And I fill the login form with the correct password with "<GHOST_PASSWORD>"
   And I wait for 2 seconds
   And I try to click login
-  And I wait for 2 seconds
+  And I wait for 3 seconds
   Then I expect the dashboard to be visible

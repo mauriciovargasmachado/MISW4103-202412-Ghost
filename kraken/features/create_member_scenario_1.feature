@@ -25,6 +25,7 @@ Scenario: Crear un miembro con todos los campos diligenciados correctamente.
   And I click on the save member button
   And I wait for 3 seconds
   Then I expect the member creation message contains "<MEMBER_SUCCESS_MESSAGE>"
+  And I wait for 3 seconds
   And I navigate to page "<GHOST_MEMBERS_URL>"
-  And I wait for 2 seconds
+  And I wait for 7 seconds
   And I expect the new member in the members list

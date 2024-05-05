@@ -23,8 +23,9 @@ Scenario: Crear un miembro con una dirección de correo electrónico ya existent
   And I click on the save member button
   And I wait for 3 seconds
   And I check the member creation message contains "<MEMBER_SUCCESS_MESSAGE>"
+  And I wait for 7 seconds
   And I navigate to page "<GHOST_MEMBERS_URL>"
-  And I wait for 3 seconds
+  And I wait for 7 seconds
   And I check the new member in the members list
   And I start to create a new member
   And I wait for 2 seconds

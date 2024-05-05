@@ -24,5 +24,5 @@ Scenario: Publicar un post solo con titulo y una descripcion
   And I click the Final Review button
   And I wait for 3 seconds
   And I click the Publish Post button
-  And I wait for 3 seconds
+  And I wait for 7 seconds
   Then I expect to see "<PUBLISH_PAGE_SUCCESS_MESSAGE>"
