@@ -8,7 +8,7 @@ describe('Iniciar sesión con correo electrónico equivocado', () => {
       cy.wait(2000)
     })
   
-    it('Ingresar usuario y contraseña correctas.', () => {
+    it('Ingresar usuario equivocado y contraseña correcta.', () => {
 
         // Fill the email input with the wrong user-email.
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_WRONG_USERNAME'))

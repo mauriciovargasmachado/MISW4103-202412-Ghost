@@ -8,7 +8,7 @@ describe('Iniciar sesión con contraseña equivocada', () => {
       cy.wait(2000)
     })
   
-    it('Ingresar usuario y contraseña correctas.', () => {
+    it('Ingresar usuario correcto y contraseña correctas equivocada.', () => {
 
         // Fill the email input with the user-email.
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))

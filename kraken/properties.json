@@ -1,6 +1,8 @@
 {
-    "GHOST_USERNAME": "m.padillae@uniandes.edu.co",
-    "GHOST_PASSWORD": "4g_YepW-tvfCcf9",
+    "GHOST_USERNAME": "mauriciovargasmachado@gmail.com",
+    "GHOST_PASSWORD": "Cristiano001!",
+    "GHOST_WRONG_USERNAME": "maurricioovargasmachado@gmail.com",
+    "GHOST_WRONG_PASSWORD":"123456",
     "GHOST_LOGIN_URL": "http://localhost:2368/ghost/#/signin",
     "GHOST_POSTS_URL": "http://localhost:2368/ghost/#/posts",
     "GHOST_DASHBOARD_URL": "http://localhost:2368/ghost/#/dashboard",
@@ -19,5 +21,10 @@
     "VALID_TAG_COLOR": "ff0080",
     "EMPTY_TAG_COLOR": "",
     "PUBLISH_PAGE_SUCCESS_MESSAGE": "Boom. It’s out there.",
-    "SCHEDULE_PAGE_SUCCESS_MESSAGE": "All set!"
+    "SCHEDULE_PAGE_SUCCESS_MESSAGE": "All set!",
+    "INVALID_EMAIL_ADDRESS_MESSAGE":"There is no user with that email address",
+    "INVALID_PASSWORD_MESSAGE":"Your password is incorrect.",
+    "FORGOT_YOUR_EMAIL_MESSAGE":"Failed to send email. Reason: Sending failed.",
+    "SMALL_DESCRIPTION":"this is a test for the small description",
+    "LONG_DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui oficia deserunt mollit anim id est laborum"
 }

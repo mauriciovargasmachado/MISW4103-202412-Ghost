@@ -139,3 +139,69 @@ When('I fill the tag color with {kraken-string}', async function (color) {
     return await element.setValue(color);
 });
 
+
+
+//Log in scenario 1
+
+When('I fill the login with right email with {kraken-string}', async function (username) {
+    let element = await this.driver.$('#identification');
+    console.log(username);
+    return await element.setValue(username);
+});
+
+When('I fill the login form with the correct password with {kraken-string}', async function (password) {
+    let element = await this.driver.$('#password');
+    return await element.setValue(password);
+});
+
+When('I try to click login', async function() {
+    let element = await this.driver.$('#ember5');
+    return await element.click();
+})
+
+Then('I expect the dashboard to be visible', async function() {
+    let element = await this.driver.$('.gh-canvas-title');
+    return await element.getValue() == "Dashboard";
+});
+
+//Log in scenario 2
+
+Then('I expect to see a message with {kraken-string}', async function (message) {
+    let element = await this.driver.$('.main-error');
+    return await element.getValue() == message;
+});
+
+//Log in scenario 3
+
+When('I fill the login form with the wrong password with {kraken-string}', async function (password) {
+    let element = await this.driver.$('#password');
+    return await element.setValue(password);
+});
+
+//Log in scenario 4
+
+When('I try to click forget', async function() {
+    let element = await this.driver.$('#ember4');
+    return await element.click();
+})
+
+
+//Create Tag scenario 3
+
+When('I fill the tag description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('#tag-description');
+    return await element.setValue(description);
+});
+
+Then('I expect to see <=500 characters with {kraken-string}', async function (message) {
+    let element = await this.driver.$('#tag-description');
+    return await element.getValue() <=500;
+});
+
+
+//Create Tag scenario 4
+
+Then('I expect to be fill with >500 characters with {kraken-string}', async function (message) {
+    let element = await this.driver.$('#tag-description');
+    return await element.getValue() >500;
+});
