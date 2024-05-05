@@ -2,6 +2,7 @@
 Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automatizadas de software de la maestría MISO de la Universidad de los Andes. A continuación se detallan los contenidos solicitados.
 
 - [🙋‍♂️ Integrantes del equipo](#Integrantes)
+- [🌍 Ghost de acceso público](#Ghost-de-acceso-público)
 - [💻 Ejecutar pruebas con Cypress](#Ejecutar-pruebas-con-Cypress)
 - [💻 Ejecutar pruebas con Kraken](#Ejecutar-pruebas-con-Kraken)
 
@@ -15,6 +16,16 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 | 👨‍💻 Johann Sebastian Páez Campos | js.paezc1@uniandes.edu.co |
 | 👩‍💻 Jessica Daniela Páez Jiménez | jd.paezj1@uniandes.edu.co |
 | 👨‍💻 Mauricio Vargas Machado | cm.vargasm1@uniandes.edu.co |
+
+---
+
+# Ghost de acceso público
+
+Para nuestras pruebas, hemos utilizado una instancia pública de Ghost desplegada por el equipo la cual se encuentra disponible [aquí](https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/signin). 
+
+Las credenciales de acceso se encuentran en las variables de los tests (para Cypress en `cypress\cypress.env.json` y para Kraken `kraken\properties.json`).
+
+La versión de esta instancia de Ghost es la `5.82.6`.
 
 ---
 
