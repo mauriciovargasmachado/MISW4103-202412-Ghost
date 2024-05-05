@@ -20,7 +20,7 @@ Given('I try to login', async function() {
 
 Given('I wait for the dashboard to be visible', async function() {
     let element = await this.driver.$('.gh-canvas-title');
-    return await element.getValue() == "Dashboard";
+    assert(element.getValue().includes("Dashboard"));
 })
 
 When('I start to create a new page', async function() {
@@ -69,7 +69,7 @@ When('I click the Publish Page button', async function() {
 
 Then('I expect to see {kraken-string}', async function (message) {
     let element = await this.driver.$('span.green');
-    return await element.getValue() == message;
+    assert(element.getValue().includes(message));
 });
 
 
@@ -163,7 +163,7 @@ When('I try to click login', async function() {
 
 Then('I expect the dashboard to be visible', async function() {
     let element = await this.driver.$('.gh-canvas-title');
-    return await element.getValue() == "Dashboard";
+    assert(element.getValue().includes("Dashboard"));
 });
 
 //Log in scenario 2
@@ -192,7 +192,7 @@ When('I try to click forget', async function() {
 
 When('I navigate to ghost page', async function() {
     let element = await this.driver.$('.gh-canvas-title');
-    return await element.getValue() == "Dashboard";
+    assert(element.getValue().includes("Dashboard"));
 });
 
 When('I fill the tag description with {kraken-string}', async function (description) {
