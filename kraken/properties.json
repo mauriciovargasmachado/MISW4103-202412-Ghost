@@ -1,6 +1,6 @@
 {
-    "GHOST_USERNAME": "m.padillae@uniandes.edu.co",
-    "GHOST_PASSWORD": "4g_YepW-tvfCcf9",
+    "GHOST_USERNAME": "js.paezc1@uniandes.edu.co",
+    "GHOST_PASSWORD": "Prueba123@",
     "GHOST_LOGIN_URL": "http://localhost:2368/ghost/#/signin",
     "GHOST_POSTS_URL": "http://localhost:2368/ghost/#/posts",
     "GHOST_DASHBOARD_URL": "http://localhost:2368/ghost/#/dashboard",
@@ -19,5 +19,10 @@
     "VALID_TAG_COLOR": "ff0080",
     "EMPTY_TAG_COLOR": "",
     "PUBLISH_PAGE_SUCCESS_MESSAGE": "Boom. It’s out there.",
-    "SCHEDULE_PAGE_SUCCESS_MESSAGE": "All set!"
+    "SCHEDULE_PAGE_SUCCESS_MESSAGE": "All set!",
+    "GHOST_MEMBERS_URL": "http://localhost:2368/ghost/#/members",
+    "MEMBER_SUCCESS_MESSAGE": "Created",
+    "EXISTING_MEMBER_ERROR_MESSAGE": "Member already exists. Attempting to add member with existing email address",
+    "NOTE_MEMBER_ERROR_MESSAGE": "Note is too long.",
+    "EMAIL_MEMBER_ERROR_MESSAGE": "Invalid Email."
 }

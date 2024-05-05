@@ -1,4 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const { faker } = require('@faker-js/faker');
+const assert = require('assert');
 
 Given('I fill the login form email with {kraken-string}', async function (username) {
     let element = await this.driver.$('#identification');
@@ -139,3 +141,99 @@ When('I fill the tag color with {kraken-string}', async function (color) {
     return await element.setValue(color);
 });
 
+// Create Member
+var email = faker.internet.email();
+When('I start to create a new member', async function() {
+    let element = await this.driver.$('a[href="#/members/new/"]');
+    return await element.click();
+})
+
+When('I wait for the members to be visible', async function() {
+    let element = await this.driver.$('h2.gh-canvas-title');
+    let text = await element.getText();
+    assert(text == "Members");
+})
+
+When('I fill the member name with random data', async function () {
+    let element = await this.driver.$('input[name="name"]');
+    return await element.setValue(faker.person.fullName());
+});
+
+When('I fill the member email with random data', async function () {
+    let element = await this.driver.$('input[name="email"]');
+    return await element.setValue(email);
+});
+
+When('I fill the member note with random data', async function () {
+    let element = await this.driver.$('textarea[name="note"]');
+    return await element.setValue(faker.string.alphanumeric(150));
+});
+
+When('I click on the save member button', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
+When('I check the member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('div.gh-member-details-attribution p');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+When('I check the new member in the members list', async function () {
+    let emails = [];
+    let rows = await this.driver.$$('div table.gh-list tbody tr');
+    for (let i = 0; i < rows.length; i++) {
+        let link = await rows[i].$('a');
+        let paragraphs = await link.$$('p');
+        for (let j = 0; j < paragraphs.length; j++) {
+            let text = await paragraphs[j].getText();
+            emails.push(text);
+        }
+    }
+    console.log("Emails\n", emails);
+    assert(emails.includes(email));
+});
+
+When('I fill the member note with a lot of data', async function () {
+    let element = await this.driver.$('textarea[name="note"]');
+    return await element.setValue(faker.string.alphanumeric(501));
+});
+
+When('I fill the member email with invalid data', async function () {
+    let element = await this.driver.$('input[name="email"]');
+    return await element.setValue(faker.word.sample());
+});
+
+Then('I expect the member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('div.gh-member-details-attribution p');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+Then('I expect the new member in the members list', async function () {
+    let emails = [];
+    let rows = await this.driver.$$('div table.gh-list tbody tr');
+    for (let i = 0; i < rows.length; i++) {
+        let link = await rows[i].$('a');
+        let paragraphs = await link.$$('p');
+        for (let j = 0; j < paragraphs.length; j++) {
+            let text = await paragraphs[j].getText();
+            emails.push(text);
+        }
+    }
+    console.log("Emails\n", emails);
+    assert(emails.includes(email));
+});
+
+Then('I expect the error member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('div.form-group.max-width.error p.response');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+Then('I expect the member note error message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('div.form-group.gh-member-note.error p.response');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
