@@ -1,6 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { faker } = require('@faker-js/faker');
 const assert = require('assert');
+const fs = require('fs');
 
 Given('I fill the login form email with {kraken-string}', async function (username) {
     let element = await this.driver.$('#identification');
@@ -289,6 +290,14 @@ Then('I expect the member creation message contains {kraken-string}', async func
     let text = await element.getText();
     assert(text.includes(message));
 });
+
+Then('I take a screenshot and save it in {kraken-string}', async function (path) {
+    if (!fs.existsSync(path.split('/')[0])) {
+        fs.mkdirSync(`./screenshots/${path.split('/')[0]}`, { recursive: true });
+    }
+    await this.driver.saveScreenshot(`./screenshots/${path}.png`);
+});
+
 
 Then('I expect the new member in the members list', async function () {
     let emails = [];
