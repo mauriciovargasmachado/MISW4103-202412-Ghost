@@ -9,8 +9,19 @@ Given('I fill the login form email with {kraken-string}', async function (userna
     return await element.setValue(username);
 });
 
+Given('I fill the old login form email with {kraken-string}', async function (username) {
+    let element = await this.driver.$('.email.ember-text-field.gh-input.ember-view');
+    console.log(username);
+    return await element.setValue(username);
+});
+
 Given('I fill the login form password with {kraken-string}', async function (password) {
     let element = await this.driver.$('#password');
+    return await element.setValue(password);
+});
+
+Given('I fill the old login form password with {kraken-string}', async function (password) {
+    let element = await this.driver.$('.password.ember-text-field.gh-input.ember-view');
     return await element.setValue(password);
 });
 
@@ -19,10 +30,21 @@ Given('I try to login', async function() {
     return await element.click();
 })
 
+Given('I try to login in the old site', async function() {
+    let element = await this.driver.$('.login.gh-btn.gh-btn-blue.gh-btn-block.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
 Given('I wait for the dashboard to be visible', async function() {
     let element = await this.driver.$('.gh-canvas-title');
     let text = await element.getText();
     assert(text == "Let’s get started!");
+})
+
+Given('I wait for the old dashboard to be visible', async function() {
+    let element = await this.driver.$('.active.ember-view');
+    let text = await element.getText();
+    assert(text == "View site");
 })
 
 When('I start to create a new page', async function() {
@@ -43,14 +65,34 @@ When('I fill the page form body with {kraken-string}', async function (body) {
     return await element.setValue(body);
 });
 
+When('I fill the old page form body with {kraken-string}', async function (body) {
+    let e = this.driver.$('div[data-kg="editor"]');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+    return await element.setValue(body);
+});
+
 When('I click the Publish button', async function() {
     let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
+    return await element.click();
+})
+
+When('I click the old Publish button', async function() {
+    let element = await this.driver.$('div.ember-view.ember-basic-dropdown-trigger.gh-btn.gh-btn-outline.gh-publishmenu-trigger');
     return await element.click();
 })
 
 When('I schedule the publication of the page', async function() {
     let element = await this.driver.$('button.gh-publish-setting-title');
     return await element.click();
+})
+
+When('I schedule the publication of the page in the old site', async function() {
+    let element = await this.driver.$('section > div > div:nth-child(2)');
+    await element.click();
+    let element2 = await this.driver.$('header.gh-publishmenu-heading');
+    return await element2.click({force: true});
 })
 
 When('I set the schedule date and time', async function() {
@@ -64,6 +106,11 @@ When('I click the Final Review button', async function() {
     return await element.click();
 })
 
+When('I click the old Final Review button', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
 When('I click the Publish Page button', async function() {
     let element = await this.driver.$('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view');
     return await element.click();
@@ -73,6 +120,12 @@ Then('I expect to see {kraken-string}', async function (message) {
     let element = await this.driver.$('span.green');
     let text = await element.getText();
     assert(text == message);
+});
+
+Then('I expect in the old site to see {kraken-string}', async function (message) {
+    let element = await this.driver.$('.gh-publishmenu-heading');
+    let text = await element.getText();
+    assert(text.includes(message));
 });
 
 
