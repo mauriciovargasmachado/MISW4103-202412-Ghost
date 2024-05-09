@@ -1,0 +1,35 @@
+{
+    "scenarios": [
+        {
+            "id": 1,
+            "name": "Crear una página con título y cuerpos válidos y publicarla directamente.",
+            "internal_name": "create_page_scenario_1",
+            "new_version_path": ".././kraken/screenshots/create_page_scenario_1/",
+            "old_version_path": ".././kraken/screenshots/create_page_scenario_1_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        },
+        {
+            "id": 2,
+            "internal_name": "create_page_scenario_2",
+            "name": "Crear una página con título y descripción válidos y programar su publicación.",
+            "new_version_path": ".././kraken/screenshots/create_page_scenario_2/",
+            "old_version_path": ".././kraken/screenshots/create_page_scenario_2_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        }
+    ],
+    "options": {
+        "output": {
+            "errorColor": {
+                "red": 255,
+                "green": 0,
+                "blue": 255
+            },
+            "errorType": "movement",
+            "largeImageThreshold": 1200,
+            "useCrossOrigin": false,
+            "outputDiff": true
+        },
+        "scaleToSameSize": true,
+        "ignore": "antialiasing"
+    }
+}
