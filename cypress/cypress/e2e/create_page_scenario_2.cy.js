@@ -40,20 +40,21 @@ describe('Funcionalidad: Crear páginas', () => {
 
     // Try to publish the page
     cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger').eq(0).click()
-    cy.screenshot('create_page_scenario_2/10', {overwrite: true})
+    
     cy.wait(3000)
+    cy.screenshot('create_page_scenario_2/10', {overwrite: true, disableTimersAndAnimations: false})
     cy.get('button.gh-publish-setting-title').click()
-    cy.screenshot('create_page_scenario_2/11', {overwrite: true})
     cy.wait(3000)
+    cy.screenshot('create_page_scenario_2/11', {overwrite: true, disableTimersAndAnimations: false})
     cy.get('div[data-test-radio="schedule"]').click({ force: true })
-    cy.screenshot('create_page_scenario_2/12', {overwrite: true})
     cy.wait(3000)
+    cy.screenshot('create_page_scenario_2/12', {overwrite: true, disableTimersAndAnimations: false})
     cy.get('button.gh-btn.gh-btn-black.gh-btn-large').click()
-    cy.screenshot('create_page_scenario_2/13', {overwrite: true})
     cy.wait(3000)
+    cy.screenshot('create_page_scenario_2/13', {overwrite: true, disableTimersAndAnimations: false})
     cy.get('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view').click()
-    cy.screenshot('create_page_scenario_2/14', {overwrite: true})
     cy.wait(5000)
+    cy.screenshot('create_page_scenario_2/14', {overwrite: true, disableTimersAndAnimations: false})
 
     // Expect to see <SCHEDULE_PAGE_SUCCESS_MESSAGE>
     cy.get('span.green').then(($span)=>{
