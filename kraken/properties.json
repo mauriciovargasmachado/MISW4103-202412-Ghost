@@ -43,5 +43,6 @@
     "GHOST_MEMBERS_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/members",
     "PUBLISH_PAGE_SUCCESS_MESSAGE_OLD" : "Update page status",
     "PUBLISH_POST_SUCCESS_MESSAGE_OLD" : "Update post status",
-    "SCHEDULE_PAGE_SUCCESS_MESSAGE_OLD": "Will be published"
+    "SCHEDULE_PAGE_SUCCESS_MESSAGE_OLD": "Will be published",
+    "EXISTING_MEMBER_ERROR_MESSAGE_OLD": "Validation error, cannot save member. Member already exists Attempting to add member with existing email address."
 }

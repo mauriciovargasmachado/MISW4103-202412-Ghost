@@ -307,8 +307,19 @@ When('I click on the save member button', async function() {
     return await element.click();
 })
 
+When('I click on the old save member button', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
 When('I check the member creation message contains {kraken-string}', async function (message) {
     let element = await this.driver.$('div.gh-member-details-attribution p');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+When('I check the old member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('p.f7.pa0.ma0.midgrey.nudge-bottom--2');
     let text = await element.getText();
     assert(text.includes(message));
 });
@@ -328,6 +339,19 @@ When('I check the new member in the members list', async function () {
     assert(emails.includes(email));
 });
 
+When('I check the new member in the old members list', async function () {
+    let emails = [];
+    let rows = await this.driver.$$('section.content-list ol.members-list.gh-list li.gh-list-row.gh-members-list-item');
+    for (let i = 0; i < rows.length; i++) {
+        let link = await rows[i].$('a');
+        let paragraph = await link.$('p');
+        let text = await paragraph.getText();
+        emails.push(text);
+    }
+    console.log("Emails\n", emails);
+    assert(emails.includes(email));
+});
+
 When('I fill the member note with a lot of data', async function () {
     let element = await this.driver.$('textarea[name="note"]');
     return await element.setValue(faker.string.alphanumeric(501));
@@ -340,6 +364,12 @@ When('I fill the member email with invalid data', async function () {
 
 Then('I expect the member creation message contains {kraken-string}', async function (message) {
     let element = await this.driver.$('div.gh-member-details-attribution p');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+Then('I expect the old member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('p.f7.pa0.ma0.midgrey.nudge-bottom--2');
     let text = await element.getText();
     assert(text.includes(message));
 });
@@ -367,8 +397,27 @@ Then('I expect the new member in the members list', async function () {
     assert(emails.includes(email));
 });
 
+Then('I expect the new member in the old members list', async function () {
+    let emails = [];
+    let rows = await this.driver.$$('section.content-list ol.members-list.gh-list li.gh-list-row.gh-members-list-item');
+    for (let i = 0; i < rows.length; i++) {
+        let link = await rows[i].$('a');
+        let paragraph = await link.$('p');
+        let text = await paragraph.getText();
+        emails.push(text);
+    }
+    console.log("Emails\n", emails);
+    assert(emails.includes(email));
+});
+
 Then('I expect the error member creation message contains {kraken-string}', async function (message) {
     let element = await this.driver.$('div.form-group.max-width.error p.response');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+Then('I expect the old error member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('div.gh-alert-content');
     let text = await element.getText();
     assert(text.includes(message));
 });
