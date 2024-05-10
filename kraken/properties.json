@@ -42,5 +42,6 @@
     "GHOST_TAGS_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/tags",
     "GHOST_MEMBERS_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/members",
     "PUBLISH_PAGE_SUCCESS_MESSAGE_OLD" : "Update page status",
+    "PUBLISH_POST_SUCCESS_MESSAGE_OLD" : "Update post status",
     "SCHEDULE_PAGE_SUCCESS_MESSAGE_OLD": "Will be published"
 }

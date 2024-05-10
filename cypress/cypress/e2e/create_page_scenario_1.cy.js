@@ -40,14 +40,14 @@ describe('Funcionalidad: Crear páginas', () => {
 
     // Try to publish the page
     cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger').eq(0).click()
-    cy.screenshot('create_page_scenario_1/10', {overwrite: true})
     cy.wait(3000)
+    cy.screenshot('create_page_scenario_1/10', {overwrite: true, disableTimersAndAnimations: false})
     cy.get('button.gh-btn.gh-btn-black.gh-btn-large').click()
-    cy.screenshot('create_page_scenario_1/11', {overwrite: true})
     cy.wait(3000)
+    cy.screenshot('create_page_scenario_1/11', {overwrite: true, disableTimersAndAnimations: false})
     cy.get('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view').click()
-    cy.screenshot('create_page_scenario_1/12', {overwrite: true})
     cy.wait(5000)
+    cy.screenshot('create_page_scenario_1/12', {overwrite: true, disableTimersAndAnimations: false})
 
     // Expect to see <PUBLISH_PAGE_SUCCESS_MESSAGE>
     cy.get('span.green').then(($span)=>{
