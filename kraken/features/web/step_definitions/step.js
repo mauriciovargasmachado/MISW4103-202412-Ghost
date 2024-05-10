@@ -514,3 +514,55 @@ Then('I expect to see the featured element', async function() {
     assert(text!=0);
 })
 
+// Create a draft scenario 1 old
+
+
+When('I click in the old draft button', async function() {
+    let element = await this.driver.$('.gh-nav-viewname');
+    return await element.click();
+})
+
+When('I click in the old new post button', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-green');
+    return await element.click();
+})
+
+When('I fill the old draft title with {kraken-string}', async function (title) {
+    let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
+    return await element.setValue(title);
+})
+
+When('I fill the olf draft with a valid description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.koenig-editor__editor.__mobiledoc-editor.__has-no-content');
+    return await element.setValue(description);
+})
+
+When('I click old back to draft', async function() {
+    let element = await this.driver.$('.blue.link.fw4.flex.items-center.ember-view');
+    return await element.click();
+})
+
+Then('I expect to see the old draft save', async function () {
+    let element = await this.driver.$('.gh-content-status-draft.gh-badge.gh-badge-purple.nowrap');
+    let text = await element.getText();
+    assert(text == "DRAFT");
+});
+
+//Create a draft scenario 2 old
+
+When('I click in existing old draft', async function() {
+    let element = await this.driver.$('.gh-list-row.gh-posts-list-item');
+    return await element.click();
+})
+
+When('I edit the old description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.koenig-editor__editor-wrapper');
+    return await element.setValue(description);
+})
+
+
+Then('I expect to see the edited old text {kraken-string}', async function (message) {
+    let element = await this.driver.$('.koenig-editor__editor-wrapper');
+    let text = await element.getText();
+    assert(text.includes(message));
+});

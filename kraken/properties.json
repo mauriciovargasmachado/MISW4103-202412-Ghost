@@ -41,6 +41,7 @@
     "GHOST_PASSWORD_OLD": "Prueba123@",
     "GHOST_LOGIN_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/signin",
     "GHOST_POSTS_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/posts",
+    "GHOST_DRAFT_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/posts?type=draft",
     "GHOST_DASHBOARD_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/site",
     "GHOST_PAGES_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/pages",
     "GHOST_TAGS_URL_OLD": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/tags",
