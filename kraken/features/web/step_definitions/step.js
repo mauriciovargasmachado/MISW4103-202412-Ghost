@@ -479,3 +479,38 @@ Then('I expect to see the edited text {kraken-string}', async function (message)
     assert(text.includes(message));
 });
 
+// Create a draft scenario 3
+
+When('I click right button', async function() {
+    let element = await this.driver.$('.gh-posts-list-item-group');
+    await element.click({ button: "right" });
+})
+
+When('I click on the delete button', async function() {
+    let elements = await this.driver.$$('.mr2');
+    if (elements.length >= 4) {
+        let fourthElement = elements[4];
+        await fourthElement.click();
+    }
+})
+
+Then('I delete the draft', async function() {
+    let element = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
+// Create a draft scenario 4
+
+When('I click on the featured button', async function() {
+    let elements = await this.driver.$$('.mr2');
+    if (elements.length >= 4) {
+        let fourthElement = elements[0];
+        await fourthElement.click();
+    }
+})
+Then('I expect to see the featured element', async function() {
+    let element = await this.driver.$('.gh-featured-post');
+    let text = await element.getText();
+    assert(text!=0);
+})
+
