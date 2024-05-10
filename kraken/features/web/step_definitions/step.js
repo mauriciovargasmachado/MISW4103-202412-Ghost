@@ -427,3 +427,55 @@ Then('I expect the member note error message contains {kraken-string}', async fu
     let text = await element.getText();
     assert(text.includes(message));
 });
+
+//Create a draft scenario 1
+
+When('I click in the draft button', async function() {
+    let element = await this.driver.$('.gh-nav-viewname');
+    return await element.click();
+})
+
+When('I click in the new post button', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-primary');
+    return await element.click();
+})
+
+When('I fill the draft title with {kraken-string}', async function (title) {
+    let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
+    return await element.setValue(title);
+})
+
+When('I fill the draf with a valid description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.kg-prose');
+    return await element.setValue(description);
+})
+
+When('I click back to draft', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn-editor.gh-editor-back-button');
+    return await element.click();
+})
+
+Then('I expect to see the draft save', async function () {
+    let element = await this.driver.$('.gh-content-entry-status');
+    let text = await element.getText();
+    assert(text == "Draft");
+});
+
+//Create a draft scenario 2
+
+When('I click in existing draft', async function() {
+    let element = await this.driver.$('.gh-posts-list-item-group');
+    return await element.click();
+})
+
+When('I edit the description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.kg-prose');
+    return await element.setValue(description);
+})
+
+Then('I expect to see the edited text {kraken-string}', async function (message) {
+    let element = await this.driver.$('.kg-prose');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+

@@ -5,6 +5,7 @@
     "GHOST_WRONG_PASSWORD":"123456",
     "GHOST_LOGIN_URL": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/signin",
     "GHOST_POSTS_URL": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/posts",
+    "GHOST_DRAFT_URL": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/posts?type=draft",
     "GHOST_DASHBOARD_URL": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/dashboard",
     "GHOST_PAGES_URL": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/pages",
     "GHOST_TAGS_URL": "https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/tags",
@@ -32,6 +33,9 @@
     "EXISTING_MEMBER_ERROR_MESSAGE": "Member already exists. Attempting to add member with existing email address",
     "NOTE_MEMBER_ERROR_MESSAGE": "Note is too long.",
     "EMAIL_MEMBER_ERROR_MESSAGE": "Invalid Email.",
+    "VALID_DRAFT_TITLE":"This is a draft title",
+    "VALID_DRAFT_DESCRIPTION":"This is a draft description",
+    "EDIT_DRAFT_DESCRIPTION":"Edited! ",
 
     "GHOST_USERNAME_OLD": "misw-4103@uniandes.edu.co",
     "GHOST_PASSWORD_OLD": "Prueba123@",
