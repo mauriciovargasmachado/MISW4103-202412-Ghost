@@ -1,12 +1,12 @@
 describe('Funcionalidad: Crear draf', () => {
     //Login 
     beforeEach(() => {
-      //Go to Login page
+      // Given I go to Login page
       cy.visit(Cypress.env('GHOST_LOGIN_URL'))
       cy.wait(7000)
       cy.screenshot('create_draft_scenario_3/1', {overwrite: true})
 
-      //Fill input form with GHOST_USERNAME and GHOST_PASSWORD
+      // And I Fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
       cy.screenshot('create_draft_scenario_3/2', {overwrite: true})
 
@@ -18,20 +18,20 @@ describe('Funcionalidad: Crear draf', () => {
       cy.screenshot('create_draft_scenario_3/4', {overwrite: true})
       
       
-      //Go to main page
+      // And I Wait for the dashboard to be visible
       cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
       cy.wait(2000)
       cy.screenshot('create_draft_scenario_3/5', {overwrite: true})
 
 
-      //Then draft page
+      // And I go to the drafts page
       cy.get('.gh-nav-viewname').eq(0).click()
       cy.screenshot('create_draft_scenario_3/6', {overwrite: true})
 
 
     })
     it('Eliminar un draft', ()=>{
-      //Create a new draft with a tittle and description
+      // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
       cy.screenshot('create_draft_scenario_3/7', {overwrite: true})
@@ -45,20 +45,22 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(6000)
       cy.screenshot('create_draft_scenario_3/9', {overwrite: true})
 
-      //Then back to draft page
+      // And I go back to drafts page.
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
       cy.wait(6000)
       cy.screenshot('create_draft_scenario_3/10', {overwrite: true})
       
+      // And I right click on the draft.
       cy.get('.ember-view.permalink.gh-list-data.gh-post-list-title').eq(0).trigger('contextmenu');
       cy.wait(3000)
       cy.screenshot('create_draft_scenario_3/11', {overwrite: true})
       
+      // And I delete the draft.
       cy.get('.mr2').eq(4).click()
       cy.wait(3000)
       cy.screenshot('create_draft_scenario_3/12', {overwrite: true})
       
-      //Then we delete the draft
+      // Then I expect to see the deleted draft.
       cy.get('.gh-btn.gh-btn-red.gh-btn-icon.ember-view').eq(0).click()
       cy.screenshot('create_draft_scenario_3/13', {overwrite: true})
     })

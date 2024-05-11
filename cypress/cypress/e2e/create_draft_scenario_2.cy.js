@@ -1,12 +1,12 @@
 describe('Funcionalidad: Crear draf', () => {
     //Login 
     beforeEach(() => {
-      //Go to Login page
+      // Given I go to Login page
       cy.visit(Cypress.env('GHOST_LOGIN_URL'))
       cy.wait(7000)
       cy.screenshot('create_draft_scenario_2/1', {overwrite: true})
 
-      //Fill input form with GHOST_USERNAME and GHOST_PASSWORD
+      // And fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
       cy.screenshot('create_draft_scenario_2/2', {overwrite: true})
 
@@ -17,17 +17,17 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(2000)
       cy.screenshot('create_draft_scenario_2/4', {overwrite: true})
 
-      //Go to main page
+      // And I Wait for the dashboard to be visible
       cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
       cy.wait(2000)
       cy.screenshot('create_draft_scenario_2/5', {overwrite: true})
 
-      //Then draft page
+      // And I go to the Drafts page
       cy.get('.gh-nav-viewname').eq(0).click()
       cy.screenshot('create_draft_scenario_2/6', {overwrite: true})
     })
     it('Edit un draft', ()=>{
-      //edit the description of an existing draft 
+      //When I edit the description of an existing draft 
       cy.get('.ember-view.permalink.gh-list-data.gh-post-list-title').eq(0).click()
       cy.wait(3000)
       cy.screenshot('create_draft_scenario_2/7', {overwrite: true})
@@ -36,7 +36,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(6000)
       cy.screenshot('create_draft_scenario_2/8', {overwrite: true})
 
-      //Then back to draft page
+      // And I go back to drafts page
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
       cy.wait(6000)
       cy.screenshot('create_draft_scenario_2/9', {overwrite: true})
@@ -45,7 +45,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(6000)
       cy.screenshot('create_draft_scenario_2/10', {overwrite: true})
 
-      //Then we confirm the edited draf is save as a draft
+      //Then I expect to see the updated draft.
       cy.get('.kg-prose').should('contain', ' This draft test was edited!');
       cy.screenshot('create_draft_scenario_2/11', {overwrite: true})
 
