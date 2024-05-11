@@ -5,6 +5,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [🌍 Ghost de acceso público](#Ghost-de-acceso-público)
 - [💻 Ejecutar pruebas con Cypress](#Ejecutar-pruebas-con-Cypress)
 - [💻 Ejecutar pruebas con Kraken](#Ejecutar-pruebas-con-Kraken)
+- [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
 
 ---
 
@@ -21,11 +22,13 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 
 # Ghost de acceso público
 
-Para nuestras pruebas, hemos utilizado una instancia pública de Ghost desplegada por el equipo la cual se encuentra disponible [aquí](https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/signin). 
+Para nuestras pruebas, hemos utilizado dos versiones de instancias públicas de Ghost desplegadas por nuestro equipo, las cuales están disponibles en los siguientes enlaces:
+* Ghost [`5.82.6`](https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/signin).
+* Ghost [`3.42.0`](https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/signin).
+
+Es importante señalar que utilizamos la versión 5.82.6 para realizar las pruebas automatizadas de los cinco escenarios implementados tanto en Cypress como en Kraken. Asimismo, la versión 3.42.0 se empleó específicamente para las pruebas de regresión.
 
 Las credenciales de acceso se encuentran en las variables de los tests (para Cypress en `cypress\cypress.env.json` y para Kraken `kraken\properties.json`).
-
-La versión de esta instancia de Ghost es la `5.82.6`.
 
 ---
 
@@ -127,3 +130,60 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
     ```
     npx kraken-node run
     ```
+
+---
+
+# Ejecutar pruebas VTR Resemble
+
+Estas instrucciones le servirán para poder obtener una copia funcional del proyecto en su máquina local y ejecutar las pruebas correspondientes a __Resemble__.
+
+## 📝 Requisitos
+
+* Node (Para esta guía se utilizó la versión __18.17.1__) ✅
+* npm (Para esta guía se utilizó la versión __9.6.7__) ✅
+* Haber realizado pruebas automatizadas en kraken con ambas versiones de ghost. ✅
+* Es esencial asegurarse de que la cantidad de imágenes de prueba para cada escenario sea coherente en todas las versiones de Ghost. Por ejemplo, al probar el escenario de publicar un nuevo post en Kraken, es necesario verificar que se hayan realizado pruebas con estas versiones y que la cantidad de imágenes que evidencian estos casos sea consistente en ambas versiones. ✅
+
+❗❗ Esta guía fue realizada usando el sistema operativo `Windows 11 Pro`.
+
+## 🛠️ Pasos a ejecutar
+
+1. Ubicarse en el directorio donde se encuentra el proyecto, ingresar a la carpeta `resemble`, abrir una terminal en esta carpeta e instalar las dependencias del proyecto con el siguiente comando:
+
+    ```
+    npm install
+    ```
+    ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/7ae32dea-3ebd-4196-ac40-995b3c967fc9)
+
+2. Ejecutar en la terminal el siguiente comando
+
+    ```
+    node index.js
+    ```
+    
+    ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/1a31447e-fb8e-41a3-b4de-1ea69bd58fec)
+
+3. Escoger el escenario que se desea realizar la prueba.
+
+    ```
+    1
+    ```
+
+    ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/c0fca8f4-74db-4119-aec2-45e8526b5ca7)
+
+4. Una vez ejecutada las pruebas verficar en la carpeta results.
+
+   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/719011c2-dd51-4f90-8c33-8a4d13267898)
+
+   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/8e8708f9-64d6-4ce4-8785-f5b66767cd0a)
+
+5. Consultar los resultados en algun navegador o editor.
+
+   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/a7075531-24e1-4f5e-84a3-3644c18f30c9)
+
+   
+
+
+
+
+   
