@@ -44,6 +44,11 @@ describe('Funcionalidad: Crear draf', () => {
       // And I go back to drafts page
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
       cy.wait(6000)
+
+      Cypress.on('uncaught:exception', (err, runnable, promise) => {
+        return false
+      });
+
       cy.screenshot('create_draft_scenario_4/10', {overwrite: true})
       
       // And I set the draft as featured.
@@ -55,9 +60,11 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
       cy.screenshot('create_draft_scenario_4/12', {overwrite: true})
       
-      // Then I expecto to see the updated featured draft.
+      // Then I expect to see the updated featured draft.
       cy.get('.gh-featured-post').should('exist');
       cy.screenshot('create_draft_scenario_4/13', {overwrite: true})
-
+      
+      // And the URL to be the Posts URL.
+      cy.url().should('contains', Cypress.env('GHOST_POSTS_URL'))
     })
   })

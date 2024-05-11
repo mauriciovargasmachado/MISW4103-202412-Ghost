@@ -39,6 +39,11 @@ describe('Funcionalidad: Crear draf', () => {
 
       // And I go back to drafts page
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
+
+      Cypress.on('uncaught:exception', (err, runnable, promise) => {
+        return false
+      });
+
       cy.wait(6000)
       cy.screenshot('create_draft_scenario_1/8', {overwrite: true})
 

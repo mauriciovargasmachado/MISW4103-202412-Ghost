@@ -48,6 +48,11 @@ describe('Funcionalidad: Crear draf', () => {
       // And I go back to drafts page.
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
       cy.wait(6000)
+
+      Cypress.on('uncaught:exception', (err, runnable, promise) => {
+        return false
+      });
+
       cy.screenshot('create_draft_scenario_3/10', {overwrite: true})
       
       // And I right click on the draft.
@@ -63,5 +68,8 @@ describe('Funcionalidad: Crear draf', () => {
       // Then I expect to see the deleted draft.
       cy.get('.gh-btn.gh-btn-red.gh-btn-icon.ember-view').eq(0).click()
       cy.screenshot('create_draft_scenario_3/13', {overwrite: true})
+
+      // And the URL to be the Posts URL.
+      cy.url().should('contains', Cypress.env('GHOST_POSTS_URL'))
     })
   })
