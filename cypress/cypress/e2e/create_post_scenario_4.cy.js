@@ -21,7 +21,7 @@ describe('Funcionalidad: Crear post', () => {
       cy.screenshot('create_post_scenario_4/6', {overwrite: true})
     })
     it('Crear post con titulo, descripcion, divider y boton', ()=>{
-        //Create a new post with a title, description and divider between title, description and button
+        //Create a new post with a title, description, divider between title and button
         cy.get('a[href="#/editor/post/"]').eq(0).click()
         cy.wait(5000)
         cy.screenshot('create_post_scenario_4/7', {overwrite: true})
@@ -48,13 +48,13 @@ describe('Funcionalidad: Crear post', () => {
         //Then publish it 
         cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger').eq(0).click()
         cy.wait(3000)
-        cy.screenshot('create_post_scenario_4/15', {overwrite: true})
+        cy.screenshot('create_post_scenario_4/15', {overwrite: true, disableTimersAndAnimations: false})
         cy.get('button.gh-btn.gh-btn-black.gh-btn-large').click()
         cy.wait(3000)
-        cy.screenshot('create_post_scenario_4/16', {overwrite: true})
+        cy.screenshot('create_post_scenario_4/16', {overwrite: true, disableTimersAndAnimations: false})
         cy.get('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view').click()
         cy.wait(5000)
-        cy.screenshot('create_post_scenario_4/17', {overwrite: true})
+        cy.screenshot('create_post_scenario_4/17', {overwrite: true, disableTimersAndAnimations: false})
         //Finally verify the post was created
         cy.get('a[href="#/dashboard/"]').eq(0).click({ force: true })
         cy.wait(2000)

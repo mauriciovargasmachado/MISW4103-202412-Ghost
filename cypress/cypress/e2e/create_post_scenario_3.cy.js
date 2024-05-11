@@ -40,13 +40,13 @@ describe('Funcionalidad: Crear post', () => {
         //Then publish it 
         cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger').eq(0).click()
         cy.wait(3000)
-        cy.screenshot('create_post_scenario_3/12', {overwrite: true})
+        cy.screenshot('create_post_scenario_3/12', {overwrite: true, disableTimersAndAnimations: false})
         cy.get('button.gh-btn.gh-btn-black.gh-btn-large').click()
         cy.wait(3000)
-        cy.screenshot('create_post_scenario_3/13', {overwrite: true})
+        cy.screenshot('create_post_scenario_3/13', {overwrite: true, disableTimersAndAnimations: false})
         cy.get('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view').click()
         cy.wait(5000)
-        cy.screenshot('create_post_scenario_3/14', {overwrite: true})
+        cy.screenshot('create_post_scenario_3/14', {overwrite: true, disableTimersAndAnimations: false})
         //Finally verify the post was created
         cy.get('a[href="#/dashboard/"]').eq(0).click({ force: true })
         cy.wait(2000)

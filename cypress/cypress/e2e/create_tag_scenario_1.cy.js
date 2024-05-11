@@ -31,7 +31,7 @@ describe('Funcionalidad: Crear tag', () => {
         //Then publish it 
         cy.get('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view').click()
         cy.wait(3000)
-        cy.screenshot('create_tag_scenario_1/9', {overwrite: true})
+        cy.screenshot('create_tag_scenario_1/9', {overwrite: true, disableTimersAndAnimations: false})
         //Finally verify the post was created
         cy.visit(Cypress.env('GHOST_TAG_URL'))
         cy.wait(2000)
