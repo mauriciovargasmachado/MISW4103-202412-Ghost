@@ -1,11 +1,11 @@
 Feature: Crear draft
 
 @user3 @web
-Scenario: Borrar un borrador.
+Scenario: Marcar un borrador como Featured.
 
   Given I navigate to page "<GHOST_LOGIN_URL>"
   And I wait for 5 seconds
-  And I take a screenshot and save it in "create_drat_scenario_4/1"
+  And I take a screenshot and save it in "create_draft_scenario_4/1"
 
   And I fill the login form email with "<GHOST_USERNAME>"
   And I wait for 2 seconds
@@ -17,7 +17,7 @@ Scenario: Borrar un borrador.
 
   And I try to login
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_drat_scenario_4/4"
+  And I take a screenshot and save it in "create_draft_scenario_4/4"
 
   And I wait for the dashboard to be visible
 
