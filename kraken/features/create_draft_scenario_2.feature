@@ -25,27 +25,23 @@ Scenario: Editar la descripcion de un borrador.
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_2/5"
 
-  And I click in the draft button
+  And I click in existing draft
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_2/6"
 
-  And I click in existing draft
-  And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2/7"
-
   And I edit the description with "<EDIT_DRAFT_DESCRIPTION>"
-  And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2/8"
+  And I wait for 10 seconds
+  And I take a screenshot and save it in "create_draft_scenario_2/7"
 
   And I click back to draft
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2/9"
+  And I take a screenshot and save it in "create_draft_scenario_2/8"
 
   And I click in existing draft
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2/10"
+  And I take a screenshot and save it in "create_draft_scenario_2/9"
 
   Then I expect to see the edited text "<EDIT_DRAFT_DESCRIPTION>"
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2/11"
+  And I take a screenshot and save it in "create_draft_scenario_2/10"
   

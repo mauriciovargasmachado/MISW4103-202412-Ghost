@@ -556,7 +556,10 @@ When('I click in existing old draft', async function() {
 })
 
 When('I edit the old description with {kraken-string}', async function (description) {
-    let element = await this.driver.$('.koenig-editor__editor-wrapper');
+    let e = this.driver.$('.koenig-editor__editor-wrapper');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
     return await element.setValue(description);
 })
 
