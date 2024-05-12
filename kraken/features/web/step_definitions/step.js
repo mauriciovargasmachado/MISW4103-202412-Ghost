@@ -1,9 +1,16 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const { faker } = require('@faker-js/faker');
 const assert = require('assert');
+const fs = require('fs');
 
 Given('I fill the login form email with {kraken-string}', async function (username) {
     let element = await this.driver.$('#identification');
+    console.log(username);
+    return await element.setValue(username);
+});
+
+Given('I fill the old login form email with {kraken-string}', async function (username) {
+    let element = await this.driver.$('.email.ember-text-field.gh-input.ember-view');
     console.log(username);
     return await element.setValue(username);
 });
@@ -13,8 +20,18 @@ Given('I fill the login form password with {kraken-string}', async function (pas
     return await element.setValue(password);
 });
 
+Given('I fill the old login form password with {kraken-string}', async function (password) {
+    let element = await this.driver.$('.password.ember-text-field.gh-input.ember-view');
+    return await element.setValue(password);
+});
+
 Given('I try to login', async function() {
     let element = await this.driver.$('#ember5');
+    return await element.click();
+})
+
+Given('I try to login in the old site', async function() {
+    let element = await this.driver.$('.login.gh-btn.gh-btn-blue.gh-btn-block.gh-btn-icon.ember-view');
     return await element.click();
 })
 
@@ -22,6 +39,12 @@ Given('I wait for the dashboard to be visible', async function() {
     let element = await this.driver.$('.gh-canvas-title');
     let text = await element.getText();
     assert(text == "Let’s get started!");
+})
+
+Given('I wait for the old dashboard to be visible', async function() {
+    let element = await this.driver.$('.active.ember-view');
+    let text = await element.getText();
+    assert(text == "View site");
 })
 
 When('I start to create a new page', async function() {
@@ -42,14 +65,34 @@ When('I fill the page form body with {kraken-string}', async function (body) {
     return await element.setValue(body);
 });
 
+When('I fill the old page form body with {kraken-string}', async function (body) {
+    let e = this.driver.$('div[data-kg="editor"]');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+    return await element.setValue(body);
+});
+
 When('I click the Publish button', async function() {
     let element = await this.driver.$('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger');
+    return await element.click();
+})
+
+When('I click the old Publish button', async function() {
+    let element = await this.driver.$('div.ember-view.ember-basic-dropdown-trigger.gh-btn.gh-btn-outline.gh-publishmenu-trigger');
     return await element.click();
 })
 
 When('I schedule the publication of the page', async function() {
     let element = await this.driver.$('button.gh-publish-setting-title');
     return await element.click();
+})
+
+When('I schedule the publication of the page in the old site', async function() {
+    let element = await this.driver.$('section > div > div:nth-child(2)');
+    await element.click();
+    let element2 = await this.driver.$('header.gh-publishmenu-heading');
+    return await element2.click({force: true});
 })
 
 When('I set the schedule date and time', async function() {
@@ -63,6 +106,11 @@ When('I click the Final Review button', async function() {
     return await element.click();
 })
 
+When('I click the old Final Review button', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
 When('I click the Publish Page button', async function() {
     let element = await this.driver.$('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view');
     return await element.click();
@@ -72,6 +120,12 @@ Then('I expect to see {kraken-string}', async function (message) {
     let element = await this.driver.$('span.green');
     let text = await element.getText();
     assert(text == message);
+});
+
+Then('I expect in the old site to see {kraken-string}', async function (message) {
+    let element = await this.driver.$('.gh-publishmenu-heading');
+    let text = await element.getText();
+    assert(text.includes(message));
 });
 
 
@@ -253,8 +307,19 @@ When('I click on the save member button', async function() {
     return await element.click();
 })
 
+When('I click on the old save member button', async function() {
+    let element = await this.driver.$('button.gh-btn.gh-btn-blue.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
 When('I check the member creation message contains {kraken-string}', async function (message) {
     let element = await this.driver.$('div.gh-member-details-attribution p');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+When('I check the old member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('p.f7.pa0.ma0.midgrey.nudge-bottom--2');
     let text = await element.getText();
     assert(text.includes(message));
 });
@@ -269,6 +334,19 @@ When('I check the new member in the members list', async function () {
             let text = await paragraphs[j].getText();
             emails.push(text);
         }
+    }
+    console.log("Emails\n", emails);
+    assert(emails.includes(email));
+});
+
+When('I check the new member in the old members list', async function () {
+    let emails = [];
+    let rows = await this.driver.$$('section.content-list ol.members-list.gh-list li.gh-list-row.gh-members-list-item');
+    for (let i = 0; i < rows.length; i++) {
+        let link = await rows[i].$('a');
+        let paragraph = await link.$('p');
+        let text = await paragraph.getText();
+        emails.push(text);
     }
     console.log("Emails\n", emails);
     assert(emails.includes(email));
@@ -290,6 +368,20 @@ Then('I expect the member creation message contains {kraken-string}', async func
     assert(text.includes(message));
 });
 
+Then('I expect the old member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('p.f7.pa0.ma0.midgrey.nudge-bottom--2');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+Then('I take a screenshot and save it in {kraken-string}', async function (path) {
+    if (!fs.existsSync(path.split('/')[0])) {
+        fs.mkdirSync(`./screenshots/${path.split('/')[0]}`, { recursive: true });
+    }
+    await this.driver.saveScreenshot(`./screenshots/${path}.png`);
+});
+
+
 Then('I expect the new member in the members list', async function () {
     let emails = [];
     let rows = await this.driver.$$('div table.gh-list tbody tr');
@@ -305,14 +397,175 @@ Then('I expect the new member in the members list', async function () {
     assert(emails.includes(email));
 });
 
+Then('I expect the new member in the old members list', async function () {
+    let emails = [];
+    let rows = await this.driver.$$('section.content-list ol.members-list.gh-list li.gh-list-row.gh-members-list-item');
+    for (let i = 0; i < rows.length; i++) {
+        let link = await rows[i].$('a');
+        let paragraph = await link.$('p');
+        let text = await paragraph.getText();
+        emails.push(text);
+    }
+    console.log("Emails\n", emails);
+    assert(emails.includes(email));
+});
+
 Then('I expect the error member creation message contains {kraken-string}', async function (message) {
     let element = await this.driver.$('div.form-group.max-width.error p.response');
     let text = await element.getText();
     assert(text.includes(message));
 });
 
+Then('I expect the old error member creation message contains {kraken-string}', async function (message) {
+    let element = await this.driver.$('div.gh-alert-content');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
 Then('I expect the member note error message contains {kraken-string}', async function (message) {
     let element = await this.driver.$('div.form-group.gh-member-note.error p.response');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+//Create a draft scenario 1
+
+When('I click in the draft button', async function() {
+    let element = await this.driver.$('.gh-nav-viewname');
+    return await element.click();
+})
+
+When('I click in the new post button', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-primary');
+    return await element.click();
+})
+
+When('I fill the draft title with {kraken-string}', async function (title) {
+    let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
+    return await element.setValue(title);
+})
+
+When('I fill the draf with a valid description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.kg-prose');
+    return await element.setValue(description);
+})
+
+When('I click back to draft', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn-editor.gh-editor-back-button');
+    return await element.click();
+})
+
+Then('I expect to see the draft save', async function () {
+    let element = await this.driver.$('.gh-content-entry-status');
+    let text = await element.getText();
+    assert(text == "Draft");
+});
+
+//Create a draft scenario 2
+
+When('I click in existing draft', async function() {
+    let element = await this.driver.$('.gh-posts-list-item-group');
+    return await element.click();
+})
+
+When('I edit the description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.kg-prose');
+    return await element.setValue(description);
+})
+
+Then('I expect to see the edited text {kraken-string}', async function (message) {
+    let element = await this.driver.$('.kg-prose');
+    let text = await element.getText();
+    assert(text.includes(message));
+});
+
+// Create a draft scenario 3
+
+When('I click right button', async function() {
+    let element = await this.driver.$('.gh-posts-list-item-group');
+    await element.click({ button: "right" });
+})
+
+When('I click on the delete button', async function() {
+    let elements = await this.driver.$$('.mr2');
+    if (elements.length >= 4) {
+        let fourthElement = elements[4];
+        await fourthElement.click();
+    }
+})
+
+Then('I delete the draft', async function() {
+    let element = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon.ember-view');
+    return await element.click();
+})
+
+// Create a draft scenario 4
+
+When('I click on the featured button', async function() {
+    let elements = await this.driver.$$('.mr2');
+    if (elements.length >= 4) {
+        let fourthElement = elements[0];
+        await fourthElement.click();
+    }
+})
+Then('I expect to see the featured element', async function() {
+    let element = await this.driver.$('.gh-featured-post');
+    let text = await element.getText();
+    assert(text!=0);
+})
+
+// Create a draft scenario 1 old
+
+
+When('I click in the old draft button', async function() {
+    let element = await this.driver.$('.gh-nav-viewname');
+    return await element.click();
+})
+
+When('I click in the old new post button', async function() {
+    let element = await this.driver.$('.ember-view.gh-btn.gh-btn-green');
+    return await element.click();
+})
+
+When('I fill the old draft title with {kraken-string}', async function (title) {
+    let element = await this.driver.$('.gh-editor-title.ember-text-area.gh-input.ember-view');
+    return await element.setValue(title);
+})
+
+When('I fill the olf draft with a valid description with {kraken-string}', async function (description) {
+    let element = await this.driver.$('.koenig-editor__editor.__mobiledoc-editor.__has-no-content');
+    return await element.setValue(description);
+})
+
+When('I click old back to draft', async function() {
+    let element = await this.driver.$('.blue.link.fw4.flex.items-center.ember-view');
+    return await element.click();
+})
+
+Then('I expect to see the old draft save', async function () {
+    let element = await this.driver.$('.gh-content-status-draft.gh-badge.gh-badge-purple.nowrap');
+    let text = await element.getText();
+    assert(text == "DRAFT");
+});
+
+//Create a draft scenario 2 old
+
+When('I click in existing old draft', async function() {
+    let element = await this.driver.$('.gh-list-row.gh-posts-list-item');
+    return await element.click();
+})
+
+When('I edit the old description with {kraken-string}', async function (description) {
+    let e = this.driver.$('.koenig-editor__editor-wrapper');
+    e.click();
+    await new Promise(r => setTimeout(r, 1000));
+    let element = await this.driver.$('p[data-koenig-dnd-droppable="true"]');
+    return await element.setValue(description);
+})
+
+
+Then('I expect to see the edited old text {kraken-string}', async function (message) {
+    let element = await this.driver.$('.koenig-editor__editor-wrapper');
     let text = await element.getText();
     assert(text.includes(message));
 });

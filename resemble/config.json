@@ -1,0 +1,59 @@
+{
+    "scenarios": [
+        {
+            "id": 1,
+            "name": "Crear una página con título y cuerpos válidos y publicarla directamente.",
+            "internal_name": "create_page_scenario_1",
+            "new_version_path": ".././kraken/screenshots/create_page_scenario_1/",
+            "old_version_path": ".././kraken/screenshots/create_page_scenario_1_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        },
+        {
+            "id": 2,
+            "internal_name": "create_page_scenario_2",
+            "name": "Crear una página con título y descripción válidos y programar su publicación.",
+            "new_version_path": ".././kraken/screenshots/create_page_scenario_2/",
+            "old_version_path": ".././kraken/screenshots/create_page_scenario_2_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        },
+        {
+            "id": 3,
+            "internal_name": "create_member_scenario_1",
+            "name": "Crear un miembro con todos los campos diligenciados correctamente.",
+            "new_version_path": ".././kraken/screenshots/create_member_scenario_1/",
+            "old_version_path": ".././kraken/screenshots/create_member_scenario_1_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        },
+        {
+            "id": 4,
+            "internal_name": "create_member_scenario_2",
+            "name": "Crear un miembro con una dirección de correo electrónico ya existente.",
+            "new_version_path": ".././kraken/screenshots/create_member_scenario_2/",
+            "old_version_path": ".././kraken/screenshots/create_member_scenario_2_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        },
+        {
+            "id": 5,
+            "internal_name": "create_member_scenario_3",
+            "name": "Crear un miembro con el campo Note mayor a 500 caracteres.",
+            "new_version_path": ".././kraken/screenshots/create_member_scenario_3/",
+            "old_version_path": ".././kraken/screenshots/create_member_scenario_3_old/",
+            "path_for_report": "../../../kraken/screenshots/"
+        }
+    ],
+    "options": {
+        "output": {
+            "errorColor": {
+                "red": 255,
+                "green": 0,
+                "blue": 255
+            },
+            "errorType": "movement",
+            "largeImageThreshold": 1200,
+            "useCrossOrigin": false,
+            "outputDiff": true
+        },
+        "scaleToSameSize": true,
+        "ignore": "antialiasing"
+    }
+}
