@@ -5,6 +5,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [🌍 Ghost de acceso público](#Ghost-de-acceso-público)
 - [💻 Ejecutar pruebas con Cypress](#Ejecutar-pruebas-con-Cypress)
 - [💻 Ejecutar pruebas con Kraken](#Ejecutar-pruebas-con-Kraken)
+- [💻 Escenarios para pruebas de regresión](#Escenarios-para-pruebas-de-regresión)
 - [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
 - [💻 Ejecutar pruebas VTR Backstop](#Ejecutar-pruebas-VTR-Backstop)
 
@@ -27,7 +28,7 @@ Para nuestras pruebas, hemos utilizado dos versiones de instancias públicas de 
 * Ghost [`5.82.6`](https://lookup-public-999490427.us-east-1.elb.amazonaws.com/ghost/#/signin).
 * Ghost [`3.42.0`](https://lookup-public-999490427.us-east-1.elb.amazonaws.com/old/ghost/#/signin).
 
-Es importante señalar que utilizamos la versión 5.82.6 para realizar las pruebas automatizadas de los cinco escenarios implementados tanto en Cypress como en Kraken. Asimismo, la versión 3.42.0 se empleó específicamente para las pruebas de regresión.
+Es importante señalar que utilizamos la versión 5.82.6 para realizar las pruebas automatizadas de los cinco funcionalidades implementados tanto en Cypress como en Kraken. Asimismo, la versión 3.42.0 se empleó específicamente para las pruebas de regresión.
 
 Las credenciales de acceso se encuentran en las variables de los tests (para Cypress en `cypress\cypress.env.json` y para Kraken `kraken\properties.json`).
 
@@ -131,6 +132,25 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
     ```
     npx kraken-node run
     ```
+
+---
+
+# Escenarios para pruebas de regresión
+
+Se seleccionaron 10 escenarios para las pruebas de regresión, los cuales fueron previamente ejecutados en Kraken utilizando la versión 3.42.0 de Ghost. Estas pruebas se llevaron a cabo con imágenes de ambas versiones (3.42.0 y 5.82.6).
+
+| 🚀 Funcionalidad | ⚙ Escenarios |
+|---------------|---|
+| Crear draft |  Crear un borrador con un titulo y una descripcion. |
+| Crear draft |  Editar un borrador creado. |
+| Agregar miembros | Crear un miembro con todos los campos diligenciados correctamente. |
+| Agregar miembros |  Crear un miembro con una dirección de correo electrónico ya existente. |
+| Agregar miembros |  Crear un miembro con el campo "Note" mayor a 500 caracteres. |
+| Agregar miembros |  Crear un miembro con una dirección de correo electrónico inválida. |
+| Creación de Páginas |  Crear una página con título y cuerpos válidos y publicarla directamente. |
+| Creación de Páginas |  Crear una página con título y descripción válidos y programar su publicación. |
+| Creación de Posts |  Publicar un post ingresando solo el título. |
+| Creación de Posts |  Publicar un post ingresando el título y una descripción. |
 
 ---
 
