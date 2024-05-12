@@ -25,37 +25,33 @@ Scenario: Borrar un borrador.
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/5"
 
-  And I click in the draft button
+  And I click in the new post button
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/6"
 
-  And I click in the new post button
+  And I fill the draft title with "<VALID_DRAFT_TITLE>"
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/7"
 
-  And I fill the draft title with "<VALID_DRAFT_TITLE>"
+  And I fill the draf with a valid description with "<VALID_DRAFT_DESCRIPTION>"
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/8"
 
-  And I fill the draf with a valid description with "<VALID_DRAFT_DESCRIPTION>"
+  And I click back to draft
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/9"
 
-  And I click back to draft
+  And I click right button
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/10"
 
-  And I click right button
+  And I click on the delete button
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_3/11"
 
-  And I click on the delete button
-  And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_3/12"
-
   Then I delete the draft
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_3/13"
+  And I take a screenshot and save it in "create_draft_scenario_3/12"
 
 
 

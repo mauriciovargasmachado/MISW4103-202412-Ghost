@@ -43,5 +43,3 @@ Scenario: Editar la descripcion de un borrador.
 
   Then I expect to see the edited text "<EDIT_DRAFT_DESCRIPTION>"
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2/10"
-  

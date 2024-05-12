@@ -43,4 +43,3 @@ Scenario: Crear un borrador con titulo y descripcion.
 
   Then I expect to see the edited old text "<EDIT_DRAFT_DESCRIPTION>"
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_2_old/10"

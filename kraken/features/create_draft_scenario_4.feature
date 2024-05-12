@@ -25,34 +25,30 @@ Scenario: Marcar un borrador como Featured.
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/5"
 
-  And I click in the draft button
+  And I click in the new post button
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/6"
 
-  And I click in the new post button
+  And I fill the draft title with "<VALID_DRAFT_TITLE>"
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/7"
 
-  And I fill the draft title with "<VALID_DRAFT_TITLE>"
+  And I fill the draf with a valid description with "<VALID_DRAFT_DESCRIPTION>"
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/8"
 
-  And I fill the draf with a valid description with "<VALID_DRAFT_DESCRIPTION>"
+  And I click back to draft
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/9"
 
-  And I click back to draft
+  And I click right button
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/10"
 
-  And I click right button
+  And I click on the featured button
   And I wait for 3 seconds
   And I take a screenshot and save it in "create_draft_scenario_4/11"
 
-  And I click on the featured button
-  And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_4/12"
-
   Then I expect to see the featured element
   And I wait for 3 seconds
-  And I take a screenshot and save it in "create_draft_scenario_4/13"
+  And I take a screenshot and save it in "create_draft_scenario_4/12"
