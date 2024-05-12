@@ -6,6 +6,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [💻 Ejecutar pruebas con Cypress](#Ejecutar-pruebas-con-Cypress)
 - [💻 Ejecutar pruebas con Kraken](#Ejecutar-pruebas-con-Kraken)
 - [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
+- [💻 Ejecutar pruebas VTR Backstop](#Ejecutar-pruebas-VTR-Backstop)
 
 ---
 
@@ -180,6 +181,47 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 5. Consultar los resultados en algun navegador o editor.
 
    ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/a7075531-24e1-4f5e-84a3-3644c18f30c9)
+
+
+---
+
+# Ejecutar pruebas VTR Backstop
+
+Estas instrucciones le servirán para poder obtener una copia funcional del proyecto en su máquina local y ejecutar las pruebas correspondientes a __Backstop__.
+
+## 📝 Requisitos
+
+* Node (Para esta guía se utilizó la versión __18.17.1__) ✅
+* npm (Para esta guía se utilizó la versión __9.6.7__) ✅
+* Haber realizado pruebas automatizadas en kraken con ambas versiones de ghost. ✅
+* Es esencial asegurarse de que la cantidad de imágenes de prueba para cada escenario sea coherente en todas las versiones de Ghost. Por ejemplo, al probar el escenario de publicar un nuevo post en Kraken, es necesario verificar que se hayan realizado pruebas con estas versiones y que la cantidad de imágenes que evidencian estos casos sea consistente en ambas versiones. ✅
+
+❗❗ Esta guía fue realizada usando el sistema operativo `Windows 11 Pro`.
+
+## 🛠️ Pasos a ejecutar
+
+1. Ubicarse en el directorio donde se encuentra el proyecto, ingresar a la carpeta `backstop`, abrir una terminal en esta carpeta e instalar las dependencias del proyecto con el siguiente comando:
+
+    ```
+    npm install -g backstopjs
+    ```
+
+   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/faf29217-48eb-422c-8e80-2eeaf39fc32d)
+
+
+
+2. Ejecutar las pruebas 
+
+    ```
+    backstop test
+    ```
+
+   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/96f47ebd-d4f7-4f17-abf3-bf3c73724c69)
+
+
+3. Consultar resultados en el navegador
+
+   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/6cbf9b3d-6995-4033-a58b-e9d41fe4543a)
 
    
 
