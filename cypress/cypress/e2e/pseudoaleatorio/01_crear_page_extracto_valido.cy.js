@@ -7,10 +7,10 @@ describe('Funcionalidad: Crear páginas', () => {
     cy.visit(Cypress.env('GHOST_LOGIN_URL'))
     cy.wait(5000)
 
-    // And I load the apriori datapool.
-    const datapoolFile = 'page_apriori_datapool.json';
-    cy.fixture(datapoolFile).then((data) => {
-      dataPool = data;
+    // And I load the pseudoaleatorio datapool.
+    const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["PAGES"];
+    cy.request(url).then((response) => {
+      dataPool = response.body;
     });
 
     // And I fill the login form with <GHOST_USERNAME> and <GHOST_PASSWORD>	
@@ -24,9 +24,10 @@ describe('Funcionalidad: Crear páginas', () => {
     // And I wait for the dashboard to be visible
     cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
   })
-  it('Crear una página con un extracto inválido >300 caracteres.', () => {
+  it('Crear una página con extracto válido.', () => {
     // When I try to create a new page
     cy.visit(Cypress.env('GHOST_PAGES_URL'))
+
     cy.get('a[href="#/editor/page/"]').eq(0).click()
     cy.wait(5000)
 
@@ -39,14 +40,20 @@ describe('Funcionalidad: Crear páginas', () => {
     cy.wait(1000)
     cy.get('.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon').click()
     cy.wait(1000)
-    cy.get('#custom-excerpt').type(dataPool.excerpt_invalid)
+    cy.get('#custom-excerpt').type(dataPool.excerpt_valid)
     cy.wait(1000)
 
     // And I try to publish the page
-    cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger').eq(0).click({force: true})
+    cy.get('button.gh-btn.gh-btn-editor.darkgrey.gh-publish-trigger').eq(0).click({ force: true })
     cy.wait(3000)
+    cy.get('button.gh-btn.gh-btn-black.gh-btn-large').click()
+    cy.wait(3000)
+    cy.get('button.gh-btn.gh-btn-large.gh-btn-pulse.ember-view').click()
+    cy.wait(5000)
 
-    // Then I expect to see error message.
-    expect(cy.contains(Cypress.env('EXCERPT_ERROR_MESSAGE')))
+    // Then I expect to see <PUBLISH_PAGE_SUCCESS_MESSAGE>
+    cy.get('span.green').then(($span) => {
+      expect($span.text()).to.equal(Cypress.env('PUBLISH_PAGE_SUCCESS_MESSAGE'))
+    })
   })
 })

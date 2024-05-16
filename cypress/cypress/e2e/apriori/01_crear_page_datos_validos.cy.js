@@ -30,7 +30,7 @@ describe('Funcionalidad: Crear páginas', () => {
     cy.get('a[href="#/editor/page/"]').eq(0).click()
     cy.wait(5000)
 
-    // And I fill the page form with <VALID_PAGE_TITLE> and <VALID_PAGE_BODY>
+    // And I fill the page form
     cy.get('.gh-editor-title.ember-text-area.gh-input.ember-view').type(dataPool.title_valid)
     cy.wait(1000)
     cy.get('.kg-prose').click()
