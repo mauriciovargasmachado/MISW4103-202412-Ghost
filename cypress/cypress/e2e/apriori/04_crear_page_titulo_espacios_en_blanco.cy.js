@@ -24,14 +24,14 @@ describe('Funcionalidad: Crear páginas', () => {
     // And I wait for the dashboard to be visible
     cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
   })
-  it('Crear una página con título y cuerpos válidos y publicarla directamente.', () => {
+  it('Crear una página con título de espacios en blanco y publicarla directamente.', () => {
     // When I try to create a new page
     cy.visit(Cypress.env('GHOST_PAGES_URL'))
     cy.get('a[href="#/editor/page/"]').eq(0).click()
     cy.wait(5000)
 
-    // And I fill the page form with <VALID_PAGE_TITLE> and <VALID_PAGE_BODY>
-    cy.get('.gh-editor-title.ember-text-area.gh-input.ember-view').type(dataPool.title_valid)
+    // And I fill the page form
+    cy.get('.gh-editor-title.ember-text-area.gh-input.ember-view').type(dataPool.title_spaces)
     cy.wait(1000)
     cy.get('.kg-prose').click()
     cy.wait(1000)

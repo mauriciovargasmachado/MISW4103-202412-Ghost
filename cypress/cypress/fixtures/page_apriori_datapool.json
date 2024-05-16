@@ -1,0 +1,11 @@
+{
+    "title_valid": "My page title",
+    "title_invalid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxad",
+    "title_empty": "",
+    "title_spaces": "     ",
+    "title_numbers": 123456789,
+    "title_code": "<script>alert('XSS')</script>",
+    "body_valid": "My page body",
+    "body_empty": "",
+    "excerpt_invalid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasd"
+}
