@@ -8,6 +8,8 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [💻 Escenarios para pruebas de regresión](#Escenarios-para-pruebas-de-regresión)
 - [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
 - [💻 Ejecutar pruebas VTR Backstop](#Ejecutar-pruebas-VTR-Backstop)
+- [💻 Ejecutar pruebas con Generación de Datos‎ ‎ ](#Ejecutar-pruebas-con-Generación-de-Datos)     ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+
 
 ---
 
@@ -244,8 +246,21 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
    ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158000388/6cbf9b3d-6995-4033-a58b-e9d41fe4543a)
 
    
+---
 
 
+# Ejecutar pruebas con Generación de Datos
 
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
 
-   
+## 📝 Generación de datos a priori
+
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+
+## 📝 Generación de datos pseudo aleatorios
+
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+
+## 📝 Generación de datos aleatorios
+
+Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
