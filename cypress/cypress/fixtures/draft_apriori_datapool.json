@@ -1,0 +1,7 @@
+{
+    "draft_valid_tittle": "This is a draft valid title",
+    "draft_invalid_tittle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, massa et vehicula suscipit, lacus nisi sodales enim, a volutpat purus never ac hatred. Curabitur non arcu eu erat lacinia tristique.Curabitur non arcu eu erat lacinia tristique.Curabitur non.",
+    "draft_invalid_tittle_message":"Hey there! It looks like you're in the middle of writing something and you haven't saved all of your content.",
+    "draft_valid_description": "This is a valid description",
+    "draft_description_edited": " This draft test was edited!"
+}
