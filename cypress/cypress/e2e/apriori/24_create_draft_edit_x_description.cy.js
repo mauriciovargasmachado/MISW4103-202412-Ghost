@@ -3,7 +3,6 @@ describe('Funcionalidad: Crear draf', () => {
 
     Cypress.on('uncaught:exception', (err, runnable) => {
       if (err.message.includes('TransitionAborted')) {
-        // return false to prevent Cypress from failing the test
         return false;
       }
     });

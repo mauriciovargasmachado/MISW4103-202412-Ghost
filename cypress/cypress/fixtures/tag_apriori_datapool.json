@@ -2,5 +2,6 @@
     "name_valid": "My tag name",
     "name_invalid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxad",
     "emptyName": "",
-    "nameWithSpaces": "                     "
+    "nameWithSpaces": "                     ",
+    "valid_description":"This is a valid description"
 }
