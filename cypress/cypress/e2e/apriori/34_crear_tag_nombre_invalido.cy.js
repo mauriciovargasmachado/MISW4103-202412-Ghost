@@ -26,6 +26,7 @@ describe('Funcionalidad: Crear tag', () => {
     // And I go to the Tags page.
     cy.visit(Cypress.env('GHOST_TAG_URL'))
     cy.wait(3000)
+    cy.url().should("eq", Cypress.env("GHOST_TAG_URL"));
   })
   it('Crear tag con nombre inválido.', () => {
 
@@ -35,11 +36,11 @@ describe('Funcionalidad: Crear tag', () => {
     cy.get('#tag-name').type(dataPool.name_invalid)
     cy.wait(3000)
 
-    //And I create it 
+    //And I try to create it 
     cy.get('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view').click()
     cy.wait(3000)
 
-    //Then I expect that the tag is created.
+    //Then I expect that the tag isn't created.
     cy.get('p.response').then(($elem) => {
       expect($elem.text()).contains(Cypress.env('TAG_NAME_ERROR_MESSAGE'))
     })

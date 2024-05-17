@@ -1,4 +1,6 @@
 {
     "name_valid": "My tag name",
-    "name_invalid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxad"
+    "name_invalid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxad",
+    "emptyName": "",
+    "nameWithSpaces": "                     "
 }
