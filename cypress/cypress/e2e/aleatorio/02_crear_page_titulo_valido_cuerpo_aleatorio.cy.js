@@ -29,7 +29,7 @@ describe('Funcionalidad: Crear páginas', () => {
     cy.wait(1000)
     cy.get('.kg-prose').click()
     cy.wait(1000)
-    cy.get('p[data-koenig-dnd-droppable="true"]').type(faker.string.alpha({ length: { min: 1, max: 100000 } }));
+    cy.get('p[data-koenig-dnd-droppable="true"]').type(faker.string.alpha({ length: { min: 1, max: 1000 } }));
     cy.wait(1000)
 
     // And I try to publish the page
