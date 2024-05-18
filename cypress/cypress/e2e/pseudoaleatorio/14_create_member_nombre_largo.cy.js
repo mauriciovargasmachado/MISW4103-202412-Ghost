@@ -48,9 +48,9 @@ describe("Funcionalidad: Crear miembro", () => {
       expect($p.text()).contains(Cypress.env("NAME_MEMBER_ERROR_MESSAGE"));
     });
 
-    // And I expect that the button creation message contains "Retry"
+    // And I expect that the create button message contains "Retry"
     cy.get("span[data-test-task-button-state='failure']").then((span) => {
-      expect(span.text()).contains(Cypress.env("ERROR_MESSAGE_ON_CREATE_MEMBER_BUTTON"));
+      expect(span.text()).contains(Cypress.env("ERROR_MESSAGE_ON_SAVE_BUTTON"));
     });
   });
 });
