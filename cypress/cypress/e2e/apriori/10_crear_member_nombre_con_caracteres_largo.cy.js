@@ -25,7 +25,7 @@ describe("Funcionalidad: Crear miembro", () => {
     cy.url().should("eq", Cypress.env("GHOST_DASHBOARD_URL"));
   });
 
-  it("Crear un miembro con el campo nombre muy largo para visualizar el fallo de la vista", () => {
+  it("Crear un miembro con el campo nombre lleno de caracteres muy largo para visualizar el fallo de la vista", () => {
     // When I try to create a new member
     cy.visit(Cypress.env("GHOST_MEMBERS_URL"));
     cy.wait(3000);
