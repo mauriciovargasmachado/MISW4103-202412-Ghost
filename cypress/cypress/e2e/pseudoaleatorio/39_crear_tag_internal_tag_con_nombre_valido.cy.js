@@ -9,17 +9,17 @@ describe('Funcionalidad: Crear tag', () => {
     });
   
   
-    //Login 
-    beforeEach(() => {
-      //Given I go to Login page
-      cy.visit(Cypress.env('GHOST_LOGIN_URL'))
-      cy.wait(5000)
-  
-      // And I load the apriori datapool.
-      const datapoolFile = 'tag_apriori_datapool.json';
-      cy.fixture(datapoolFile).then((data) => {
-        dataPool = data;
-      });
+   //Login 
+   beforeEach(() => {
+    //Given I go to Login page
+    cy.visit(Cypress.env('GHOST_LOGIN_URL'))
+    cy.wait(5000)
+
+    // And I load the apriori datapool.
+    const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["TAGS"];
+    cy.request(url).then((response) => {
+      dataPool = response.body;
+    });
   
       //And I fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
@@ -36,7 +36,7 @@ describe('Funcionalidad: Crear tag', () => {
       cy.url().should("eq", Cypress.env("GHOST_TAG_URL"));
     })
   
-    it('Crear tag interno con descripcion valida.', () => {
+    it('Crear tag interno con nombre valido.', () => {
   
       //When I click in internal tag
       cy.get('.gh-contentfilter.gh-btn-group').eq(0).click()
@@ -47,8 +47,6 @@ describe('Funcionalidad: Crear tag', () => {
       cy.wait(5000)
       cy.get('#tag-name').type('#' + dataPool.name_valid);
       cy.wait(3000);
-      cy.get('#tag-description').type(dataPool.valid_description)
-      cy.wait(3000)
   
       //And I try to create it 
       cy.get('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view').click()
@@ -60,13 +58,9 @@ describe('Funcionalidad: Crear tag', () => {
       // And I go to the Tags page.
       cy.get('.gh-btn').eq(0).click()
       cy.wait(3000)
-
-      //and I click in the internal tag I create
-      cy.get('.gh-tag-list-name').eq(0).click()
-      cy.wait(3000)
   
       //Then I expect that the tag is created.
-      cy.get('#tag-description').should('exist');
+      cy.get('.gh-tag-list-name').should('exist');
   
     })
   })
