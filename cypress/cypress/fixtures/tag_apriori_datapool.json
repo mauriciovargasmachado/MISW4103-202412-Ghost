@@ -3,5 +3,9 @@
     "name_invalid": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxadxxxxxxxxxxxxxxxxxxxxxxxxxxxxxasdxxxxxxxxxxxxad",
     "emptyName": "",
     "nameWithSpaces": "                     ",
-    "valid_description":"This is a valid description"
+    "valid_description":"This is a valid description",
+    "color_valid": "1517A3",
+    "meta_title": "GHOST",
+    "meta_description": "Esta es un ejemplo de descripcion",
+    "meta_URL": "https://www.example.com/"
 }
