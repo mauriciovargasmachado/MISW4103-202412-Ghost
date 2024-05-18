@@ -8,7 +8,7 @@ describe('Funcionalidad: Crear tag', () => {
     cy.visit(Cypress.env('GHOST_LOGIN_URL'))
     cy.wait(5000)
 
-    // And I load the apriori datapool.
+    // And I load the pseudoaleatorio datapool.
     const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["TAGS"];
     cy.request(url).then((response) => {
       dataPool = response.body;
@@ -29,7 +29,7 @@ describe('Funcionalidad: Crear tag', () => {
   })
   it('Crear tag con nombre y color válidos.', () => {
 
-    //When I create a new tag with a title
+    //When I create a new tag with a valid name and valid color.
     cy.get('a[href="#/tags/new/"]').eq(0).click()
     cy.wait(5000)
     cy.get('#tag-name').type(dataPool.name)
