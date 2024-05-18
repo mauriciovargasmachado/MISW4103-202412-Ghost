@@ -45,8 +45,8 @@ describe('Funcionalidad: Crear tag', () => {
     //And I create a new tag with a valid name
     cy.get('.ember-view.gh-btn.gh-btn-green').eq(0).click()
     cy.wait(5000)
-    cy.get('#tag-name').type(dataPool.name_valid)
-    cy.wait(3000)
+    cy.get('#tag-name').type('#' + dataPool.name_valid);
+    cy.wait(3000);
 
     //And I try to create it 
     cy.get('button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view').click()

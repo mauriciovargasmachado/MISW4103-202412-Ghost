@@ -9,17 +9,17 @@ describe('Funcionalidad: Crear tag', () => {
     });
   
   
-    //Login 
-    beforeEach(() => {
-      //Given I go to Login page
-      cy.visit(Cypress.env('GHOST_LOGIN_URL'))
-      cy.wait(5000)
-  
-      // And I load the apriori datapool.
-      const datapoolFile = 'tag_apriori_datapool.json';
-      cy.fixture(datapoolFile).then((data) => {
-        dataPool = data;
-      });
+   //Login 
+   beforeEach(() => {
+    //Given I go to Login page
+    cy.visit(Cypress.env('GHOST_LOGIN_URL'))
+    cy.wait(5000)
+
+    // And I load the apriori datapool.
+    const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["TAGS"];
+    cy.request(url).then((response) => {
+      dataPool = response.body;
+    });
   
       //And I fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
