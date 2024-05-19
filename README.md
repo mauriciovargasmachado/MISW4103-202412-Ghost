@@ -249,7 +249,8 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 ---
 
 
-# Ejecutar pruebas con Generación de Datos Apriori, Pseudo-aleatorio y Aleatorio
+# Ejecutar pruebas con Generación de Datos
+## Apriori, Pseudo-aleatorio y Aleatorio
 
 ## 📝 Requisitos
 
