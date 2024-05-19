@@ -284,6 +284,51 @@ El mismo ejemplo puede seguirse para el desarrollo de los 40 escenarios de prueb
 
 ## 📝 Generación de datos pseudo aleatorios
 
+Para la obtención de datos de la estrategia pseudoaleatoria se opto por la herramienta Mockaroo ![](https://mockaroo.com) .
+
+Una vez dentro de la web de Mockaroo se encuentra directamente la herramienta de generación de datos pseudo-aleatorios; sin embargo, es importante crear cuenta e ingresar a la plataforma una ve registrado, para lo cual se debe:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/15623d88-6a61-4c94-8355-f9a8d6bcde7f)
+
+Y generar un usuario y contraseña o usar un autenticador aprobado: 
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/3da8ac4e-99ae-4262-9b44-738ddab9501f)
+
+Una vez dentro de la cuenta podemos generar una gran variedad de datos pseudo-aleatorios, llenando primero el nombre del campo, seleccionando el tipo de dato que más nos convenga para la ejecución de la prueba, y determinando el tamaño, cantidad, e incluso cantidad de espacios en blanco a dejar al momento de generar los datos:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/d26015d1-1c4b-4530-b55f-b85ef8841b54)
+
+
+Una vez estamos seguros de la generación de los datos, podemos seleccionar el tipo de formatos y la cantidad de líneas a generar, así como el formato de los mismos, y damos click en generar datos: 
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/8f98e7a6-9f14-487f-b30c-538c5ce6d339)
+
+Una vez generados los datos, podemos hacer un preview del formato JSON generado y verificar la información que se genera:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/4295736e-d249-4865-9079-305b31881eb8)
+
+Así mismo, si hacemos Scroll hacia la parte inferior notaremos que también se ha generado un URL que contiene nuestros datos y que podremos vincular en la ejecución de nuestras pruebas:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/65e65e35-ea71-4487-b6c4-d62df71b30f5)
+
+Estas URLs generadas por cada funcionalidad a probar de la aplicación las consignamos como datos pseudo-aleatorios en el archivo cypress.env.json
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/46ec8b41-486b-40b9-b34d-2d415243b923)
+
+Y podremos convocar este datapool de la misma manera que lo hicimos al generar las pruebas a priori. De esta manera podremos llamar directamente los datos generados por Mockaroo cada vez que lo necesitemos dentro de cada prueba:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/beb3c7eb-72c6-4321-ac40-8672914bcc90)
+
+Una ventaja de Mockaroo es que permite que editemos nuestra información dinámicamente, lo que permite que la cambiemos mientras ejecutamos la prueba, ya sea para ajustar la misma, o para generar mejores datos con la misma.
+
+
 
 
 ## 📝 Generación de datos aleatorios
