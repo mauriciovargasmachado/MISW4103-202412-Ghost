@@ -8,7 +8,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [💻 Escenarios para pruebas de regresión](#Escenarios-para-pruebas-de-regresión)
 - [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
 - [💻 Ejecutar pruebas VTR Backstop](#Ejecutar-pruebas-VTR-Backstop)
-- [💻 Ejecutar pruebas con Generación de Datos Apriori, Pseudo-aleatorio y Aleatorio](#Ejecutar-pruebas-con-Generación-de-Datos-Apriori,-Pseudo-aleatorio-y-Aleatorio)     ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+- [💻 Ejecutar pruebas con Generación de Datos‎ ‎ ](#Ejecutar-pruebas-con-Generación-de-Datos)     ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
 
 
 ---
@@ -249,7 +249,8 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 ---
 
 
-# Ejecutar pruebas con Generación de Datos Apriori, Pseudo-aleatorio y Aleatorio
+# Ejecutar pruebas con Generación de Datos
+## Apriori, Pseudo-aleatorio y Aleatorio
 
 ## 📝 Requisitos
 
@@ -323,8 +324,3 @@ Para la ejecución de los casos con generación de datos Apriori, Pseudo-aleator
 - Cada ejecución de las pruebas con datos aleatorios siempre tendrán datos diferentes: Lo que cambia con respecto a los pseudo-aleatorios es que no hay una respuesta predeterminada puesto que se utiliza mayoritariamente `faker.string.alpha()` el cuál genera una cadena de texto impredecible.
 
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/3560ae86-e8b6-4587-a6fe-4b4db7c6ca24)
-
-
-
-
-
