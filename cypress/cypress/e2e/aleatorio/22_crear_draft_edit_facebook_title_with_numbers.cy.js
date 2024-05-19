@@ -40,7 +40,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft que edite ls descripcion de facebook', ()=>{
+    it('Crear un draft que edite el titulo de facebook con numeros', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
@@ -62,9 +62,13 @@ describe('Funcionalidad: Crear draf', () => {
       cy.get('.nav-list-item').eq(5).click()
       cy.wait(3000)
 
-      //And I edit Facebook tittle
-      let facebook_tittle = generate_tittle(words_in_tittle)
-      cy.get('.post-setting-og-title.ember-text-field.gh-input.ember-view').type(facebook_tittle)
+      //And I edit Facebook tittle with numbers
+      const randomNumbers = [];
+      for (let i = 0; i < 5; i++) {
+      randomNumbers.push(faker.datatype.number({ min: 1, max: 100 }));
+      }
+      const randomNumbersString = randomNumbers.join(' ');
+      cy.get('.post-setting-og-title.ember-text-field.gh-input.ember-view').type(randomNumbersString)
       cy.wait(6000)
 
       //And I edit facebook description

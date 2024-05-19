@@ -19,6 +19,11 @@ describe('Funcionalidad: Crear draf', () => {
       return description
     }
 
+    function generate_long_description(words_in_long_description){
+        let description = faker.lorem.words(words_in_long_description)
+        return description
+      }
+
     //Login 
     beforeEach(() => {
         // Given I go to Login page
@@ -40,7 +45,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft que edite ls descripcion de facebook', ()=>{
+    it('Crear un draft que edite a una descripcion larga de facebook', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
@@ -68,7 +73,8 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(6000)
 
       //And I edit facebook description
-      let facebook_description = generate_description(words_in_description)
+      let words_in_long_description = 50
+      let facebook_description = generate_long_description(words_in_long_description)
       cy.get('.post-setting-og-description.ember-text-area.gh-input.ember-view').type(facebook_description)
       cy.wait(6000)
 

@@ -19,6 +19,18 @@ describe('Funcionalidad: Crear draf', () => {
       return description
     }
 
+    const asianCharacters = '你好世界这是一个测试'.split('');
+
+
+    function generateAsianString(length) {
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = faker.datatype.number({ min: 0, max: asianCharacters.length - 1 });
+        result += asianCharacters[randomIndex];
+    }
+    return result;
+    }
+
     //Login 
     beforeEach(() => {
         // Given I go to Login page
@@ -40,7 +52,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft que edite ls descripcion de facebook', ()=>{
+    it('Crear un draft que edite ls descripcion de facebook con caracteres asiaticos', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
@@ -67,9 +79,9 @@ describe('Funcionalidad: Crear draf', () => {
       cy.get('.post-setting-og-title.ember-text-field.gh-input.ember-view').type(facebook_tittle)
       cy.wait(6000)
 
-      //And I edit facebook description
-      let facebook_description = generate_description(words_in_description)
-      cy.get('.post-setting-og-description.ember-text-area.gh-input.ember-view').type(facebook_description)
+      //And I edit facebook description with asian characters
+      const asianString = generateAsianString(75);
+      cy.get('.post-setting-og-description.ember-text-area.gh-input.ember-view').type(asianString)
       cy.wait(6000)
 
       // And I go back to drafts page
@@ -89,6 +101,6 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
 
       //Then I expect to see meta description field fill
-      cy.get('.post-setting-og-description.ember-text-area.gh-input.ember-view').should('have.value', facebook_description);
+      cy.get('.post-setting-og-description.ember-text-area.gh-input.ember-view').should('have.value', asianString);
     });
   });
