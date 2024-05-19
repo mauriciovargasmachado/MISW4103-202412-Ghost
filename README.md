@@ -315,6 +315,8 @@ Para la ejecución de los casos con generación de datos Apriori, Pseudo-aleator
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/a8590f6a-83f0-401e-a886-69695d449251)
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/04c67027-3f5a-4a7c-99d9-81eaf740868a)
 - Cada ejecución de las pruebas con datos aleatorios siempre tendrán datos diferentes con una diferencia y es que no hay una respuesta predeterminada puesto que se utiliza mayoritariamente 'faker.string.alpha()' el cuál genera una cadena de texto impredecible.
+  ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/3560ae86-e8b6-4587-a6fe-4b4db7c6ca24)
+
 
 
 
