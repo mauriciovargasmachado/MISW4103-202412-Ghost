@@ -8,7 +8,7 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [💻 Escenarios para pruebas de regresión](#Escenarios-para-pruebas-de-regresión)
 - [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
 - [💻 Ejecutar pruebas VTR Backstop](#Ejecutar-pruebas-VTR-Backstop)
-- [💻 Ejecutar pruebas con Generación de Datos‎ ‎ ](#Ejecutar-pruebas-con-Generación-de-Datos)     ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+- [💻 Ejecutar pruebas con Generación de Datos Apriori, Pseudo-aleatorio y Aleatorio](#Ejecutar-pruebas-con-Generación-de-Datos-Apriori,-Pseudo-aleatorio-y-Aleatorio)     ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
 
 
 ---
@@ -249,8 +249,7 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 ---
 
 
-# Ejecutar pruebas con Generación de Datos
-## Apriori, Pseudo-aleatorio y Aleatorio
+# Ejecutar pruebas con Generación de Datos Apriori, Pseudo-aleatorio y Aleatorio
 
 ## 📝 Requisitos
 
