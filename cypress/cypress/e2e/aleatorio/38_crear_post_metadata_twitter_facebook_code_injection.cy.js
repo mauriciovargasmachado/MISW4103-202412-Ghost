@@ -22,7 +22,7 @@ describe('Funcionalidad: Crear tag', () => {
       cy.url().should("eq", Cypress.env("GHOST_TAG_URL"));
       cy.wait(7000)
     })
-    it('Crear tag con metadata, twitter card incompleto, facebook incompleto y code injecion', () => {
+    it('Crear tag con metadata, twitter card incompleto, facebook incompleto y code injection', () => {
         
       //When I create a new tag with a title, incomplate metadata and incomplate twitter and incomplate facebook and code injection
       cy.wait(2000)
