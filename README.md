@@ -333,4 +333,35 @@ Una ventaja de Mockaroo es que permite que editemos nuestra información dinámi
 
 ## 📝 Generación de datos aleatorios
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+Para la ejecución de pruebas con la estrategia aleatoria se optó por desarrollar las mismas con la ayuda de Faker.js ![](https://fakerjs.dev/).
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/1f17f45e-bd52-406d-8c05-d5ebcb5380c3)
+
+
+Dentro del API de la herramienta encontramos una multitud de posibles datos aleatorios a ser generados y ser adaptados a nuestras pruebas: 
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/72cdc048-f9c3-47cd-a4ce-ec751397b978)
+
+Para instalar Faker dentro de su proyecto solo debe ejecutar el siguiente comando dentro de la carpeta de su proyecto: 
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/3945331e-e433-499d-ac1e-43230edc4579)
+
+Una vez instalado Faker dentro de su proyecto deberá importarlo dentro de cada una de las pruebas en las que lo use:
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/396a7d52-4a20-43d3-9d2c-5f6b4f09f6e0)
+
+De esta manera podrá crear funciones o usar los métodos para crear datos aleatorios que podrá usar en sus pruebas:
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/a25a7948-984b-4766-839f-3a6a25b6d2bf)
+
+Así mismo podrá usar los datos aleatorios generados por faker en múltiples pruebas, o en múltiples partes de una prueba:
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/fc72cdf3-de7b-4e04-ae52-6073bccdbed6)
+
+Y podrá usar los diferentes tipos de datos aleatorios que convoque en cada una de las pruebas, según el formato que requiera: 
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/95796769-720c-4955-8111-99447a43fecd)
+
+
+
+
