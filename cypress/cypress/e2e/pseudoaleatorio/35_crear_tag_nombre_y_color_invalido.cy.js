@@ -28,7 +28,7 @@ describe("Funcionalidad: Crear tag", () => {
     cy.url().should("eq", Cypress.env("GHOST_TAG_URL"));
   });
 
-  it("Crear tag con nombre válido y color inválido.", () => {
+  it("Crear tag con nombre inválido y color inválido.", () => {
     //When I create a new tag with a title
     cy.get('a[href="#/tags/new/"]').eq(0).click();
     cy.wait(5000);

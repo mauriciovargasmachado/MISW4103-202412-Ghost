@@ -24,7 +24,7 @@ describe('Funcionalidad: Crear páginas', () => {
     // And I wait for the dashboard to be visible
     cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
   })
-  it('Crear una página con extracto válido.', () => {
+  it('Crear una página con tag numérico.', () => {
     // When I try to create a new page
     cy.visit(Cypress.env('GHOST_PAGES_URL'))
 

@@ -35,7 +35,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft con un tilulo aleatorio pseudo generado', ()=>{
+    it('Crear un draft con un titulo aleatorio pseudo generado', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)

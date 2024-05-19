@@ -35,7 +35,7 @@ describe('Funcionalidad: Crear draf', () => {
 
 
     })
-    it('Añadir un feature a un draft creado con un titlo con numeros', ()=>{
+    it('Añadir un feature a un draft creado con un titulo con numeros', ()=>{
       // When I create a new draft with a title and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
