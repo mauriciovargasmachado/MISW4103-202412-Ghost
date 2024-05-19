@@ -301,21 +301,28 @@ Para la ejecución de los casos con generación de datos Apriori, Pseudo-aleator
 6. Se abrirá el navegador seleccionado en donde se listarán los archivos tests que contiene el proyecto. En este caso, se cuentan con 144 archivos, distribuidos en carpetas de la siguiente forma:
    - **Originals:** Esta carpeta contiene los 20 escenarios iniciales que entregamos en las semanas pasadas.
    - **Deprecated:** Esta carpeta contiene los 4 escenarios de login que se descartaron por recomendación dada en la retroalimentación.
-   - **Apriori:** Esta carpeta contiene los 40 escenearios creados utilizando datos Apriori obtenidos de archivos json contenidos en la carpeta 'fixtures'.
-   - **Pseudoaleatorio:** Esta carpeta contiene los 40 escenearios creados utilizando datos Pseudo-aleatorios generados por los API's creados en Mockaroo, cada resultado es diferente en cada solicitud que se realiza, la información de los Endpoints está disponible en el archivo 'cypress.env.json' en el atributo 'PSEUDO_ALEATORIO_DATAPOOLS'.
-   - **Aleatorios:** Esta carpeta contiene los 40 escenarios creados utilizando datos aleatorios generados con 'Faker'.
+   - **Apriori:** Esta carpeta contiene los 40 escenarios creados utilizando datos Apriori obtenidos de archivos json contenidos en la carpeta `fixtures`.
+   - **Pseudoaleatorio:** Esta carpeta contiene los 40 escenarios creados utilizando datos Pseudo-aleatorios generados por los API's creados en Mockaroo, cada resultado es diferente en cada solicitud que se realiza, la información de los endpoints está disponible en el archivo `cypress.env.json` en el atributo `PSEUDO_ALEATORIO_DATAPOOLS`.
+   - **Aleatorios:** Esta carpeta contiene los 40 escenarios creados utilizando datos aleatorios generados con __Faker JS__.
      
     ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/1f5f6c58-0d14-4182-b1f0-f61885da12d2)
+    
 7. Finalmente, desplegamos la carpeta que contenga las pruebas que queramos ejecutar y le damos clic sobre la prueba seleccionada.
+
     ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/3c191dc4-05e5-4653-b58c-d39661cbffb9)
 
 ## Consideraciones
-- Cada ejecución de las pruebas con datos a Priori siempre tendrán la misma información y será la que está especificada en los archivos contenidos en la carpeta 'fixtures'.
+- Cada ejecución de las pruebas con datos a Priori siempre tendrán la misma información y será la que está especificada en los archivos contenidos en la carpeta `fixtures`.
+
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/50567ef0-5383-4ea9-bb50-b87f9600a25f)
+  
 - Cada ejecución de las pruebas con datos Pseudo-aleatorios siempre tendrán datos diferentes que son los expuestos en las diferentes API's creadas en Mockaroo, cómo se muestra a continuación.
+
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/a8590f6a-83f0-401e-a886-69695d449251)
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/04c67027-3f5a-4a7c-99d9-81eaf740868a)
-- Cada ejecución de las pruebas con datos aleatorios siempre tendrán datos diferentes con una diferencia y es que no hay una respuesta predeterminada puesto que se utiliza mayoritariamente 'faker.string.alpha()' el cuál genera una cadena de texto impredecible.
+
+- Cada ejecución de las pruebas con datos aleatorios siempre tendrán datos diferentes: Lo que cambia con respecto a los pseudo-aleatorios es que no hay una respuesta predeterminada puesto que se utiliza mayoritariamente `faker.string.alpha()` el cuál genera una cadena de texto impredecible.
+
   ![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/158114089/3560ae86-e8b6-4587-a6fe-4b4db7c6ca24)
 
 
