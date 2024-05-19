@@ -251,15 +251,40 @@ Estas instrucciones le servirán para poder obtener una copia funcional del proy
 
 # Ejecutar pruebas con Generación de Datos
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+Para la ejecución de pruebas aleatorias, el equipo de trabajo se enfocó en desarrollar tres estrategias diferentes de obtención de datos y aplico cada una de las mismas en 40 pruebas diferentes cada vez, para un total de 120 escenarios de pruebas los cuales fueron probados y desarrollados en la herramienta Cypress. Estas pruebas se desarrollaron con datos a priori, o generados manualmente por el desarrollador con oráculo definido, pruebas pseudoaleatorias para las cuales se usó la herramienta Mockaroo para la generación de datos con oráculo definido de manera aleatoria, y finalmente el uso de faker.js para la generación de datos aleatorios dentro de las pruebas.
 
 ## 📝 Generación de datos a priori
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+Para la generación de datos a priori el equipo definió primero los datos de uso genérico como usuario y contraseña de usuario sobre la aplicación Ghost e incluyo los mismos en el archivo cypress.env.json dejando declarados también todos los datos usados en las pruebas desarrolladas durante las semanas previas.
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/bb4bf29f-dcaa-4219-b07f-0e6d536d101f)
+
+
+Posteriormente, dentro de la carpeta fixtures, se incluyeron los datos de oráculo definido de cada funcionalidad de la aplicación: 
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/5277aeaa-98c2-407e-a5d5-809367d391cc)
+
+
+Una vez incluidos los datos a priori en formato JSON se deben vincular los datos incluidos dentro del formato JSON de fixtures en cada prueba a fin de ser llamados durante su ejecución:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/ff6bbb62-cdf4-458a-b810-069bb29a8954)
+
+
+De esta manera, cuando se requieran llamar los datos generados a priori, se podrán llamar los datos directamente en el momento de convocar los datos en la prueba:
+
+
+![image](https://github.com/mpadillae/MISW4103-202412-Ghost/assets/22574945/6982fa73-76bc-4dc9-b8f6-785ea9224e76)
+
+
+El mismo ejemplo puede seguirse para el desarrollo de los 40 escenarios de prueba a priori, y el mismmo permitio la ejecucion y verificacion de la prueba en la herramienta Cypress.
+
 
 ## 📝 Generación de datos pseudo aleatorios
 
-Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+
 
 ## 📝 Generación de datos aleatorios
 
