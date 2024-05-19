@@ -24,7 +24,7 @@ describe('Funcionalidad: Crear páginas', () => {
     // And I wait for the dashboard to be visible
     cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
   })
-  it('Crear una página con título vacio publicarla directamente.', () => {
+  it('Crear una página con cuerpo vacio publicarla directamente.', () => {
     // When I try to create a new page
     cy.visit(Cypress.env('GHOST_PAGES_URL'))
     cy.get('a[href="#/editor/page/"]').eq(0).click()
