@@ -35,13 +35,11 @@ describe('Funcionalidad: Crear draf', () => {
 
 
     })
-    it('Duplicar a un draft', ()=>{
+    it('Duplicar a un draft sin titulo', ()=>{
       // When I create a new draft with a title and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
 
-      cy.get('.gh-editor-title').type(dataPool.draft_valid_tittle)
-      cy.wait(3000)
 
       cy.get('.kg-prose').type(dataPool.draft_valid_description)
       cy.wait(6000)
@@ -53,11 +51,11 @@ describe('Funcionalidad: Crear draf', () => {
 
       
       // And I set the draft as featured.
-      cy.get('.ember-view.permalink.gh-list-data.gh-post-list-title').eq(3).trigger('contextmenu');
+      cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).trigger('contextmenu');
       cy.wait(3000)
 
       
-      cy.get('.mr2').eq(0).click()
+      cy.get('.mr2').eq(3).click()
       cy.wait(3000)
 
       

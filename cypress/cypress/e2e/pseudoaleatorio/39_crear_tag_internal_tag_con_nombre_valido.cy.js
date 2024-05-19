@@ -15,7 +15,7 @@ describe('Funcionalidad: Crear tag', () => {
     cy.visit(Cypress.env('GHOST_LOGIN_URL'))
     cy.wait(5000)
 
-    // And I load the apriori datapool.
+    // And I load the pseudoaleatory datapool.
     const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["TAGS"];
     cy.request(url).then((response) => {
       dataPool = response.body;
@@ -58,9 +58,22 @@ describe('Funcionalidad: Crear tag', () => {
       // And I go to the Tags page.
       cy.get('.gh-btn').eq(0).click()
       cy.wait(3000)
+
+      //and I click in internal tag
+      cy.get('.gh-contentfilter.gh-btn-group').eq(0).click()
+      cy.wait(3000)
   
       //Then I expect that the tag is created.
-      cy.get('.gh-tag-list-name').should('exist');
+      cy.get('.gh-tag-list-name').should('exist'); 
   
     })
+
+    afterEach(() => {
+      cy.get('.gh-tag-list-name').eq(0).click();
+      cy.wait(3000);
+      cy.get('.gh-btn.gh-btn-red.gh-btn-icon').eq(0).click();
+      cy.wait(3000);
+      cy.get('.gh-btn.gh-btn-red.gh-btn-icon.ember-view').eq(0).click();
+      });
+
   })

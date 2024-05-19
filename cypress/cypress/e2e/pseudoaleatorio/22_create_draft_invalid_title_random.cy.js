@@ -35,7 +35,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft', ()=>{
+    it('Crear un draft con un tilulo aleatorio pseudo generado', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
@@ -45,7 +45,6 @@ describe('Funcionalidad: Crear draf', () => {
 
       cy.get('.kg-prose').type(dataPool.draft_valid_description)
       cy.wait(6000)
-
 
       // And I go back to drafts page
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()

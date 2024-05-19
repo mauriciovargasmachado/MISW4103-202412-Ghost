@@ -3,7 +3,6 @@ describe('Funcionalidad: Crear draf', () => {
 
     Cypress.on('uncaught:exception', (err, runnable) => {
       if (err.message.includes('TransitionAborted')) {
-        // return false to prevent Cypress from failing the test
         return false;
       }
     });
@@ -20,7 +19,6 @@ describe('Funcionalidad: Crear draf', () => {
           dataPool = response.body;
       });
 
-
       // And fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
       cy.get('input.gh-input.password').type(Cypress.env('GHOST_PASSWORD'))
@@ -36,7 +34,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft', ()=>{
+    it('Crear un draft y editar el titulo de meta', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
@@ -52,7 +50,12 @@ describe('Funcionalidad: Crear draf', () => {
       cy.get('.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon').eq(0).click()
       cy.wait(3000)
 
-      cy.get('.post-setting-custom-excerpt.ember-text-area.gh-input.ember-view').type(dataPool.draft_valid_description)
+      //And I go to Meta
+      cy.get('.nav-list-item').eq(3).click()
+      cy.wait(3000)
+
+      //And I edit meta tittle
+      cy.get('.post-setting-meta-title.ember-text-field.gh-input.ember-view').type(dataPool.draft_valid_tittle)
       cy.wait(6000)
 
       // And I go back to drafts page
@@ -67,9 +70,13 @@ describe('Funcionalidad: Crear draf', () => {
       cy.get('.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon').eq(0).click()
       cy.wait(3000)
 
+      //And I go to meta
+      cy.get('.nav-list-item').eq(3).click()
+      cy.wait(3000)
+
       //Then I expect to see excerpt field fille
-      cy.get('.post-setting-custom-excerpt.ember-text-area.gh-input.ember-view').invoke('val').then((excerptText) => {
-        expect(excerptText).to.include(dataPool.draft_valid_description);
+      cy.get('.post-setting-meta-title.ember-text-field.gh-input.ember-view').invoke('val').then((excerptText) => {
+        expect(excerptText).to.include(dataPool.draft_valid_tittle);
     });
     })
   })

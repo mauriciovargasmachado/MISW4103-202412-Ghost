@@ -15,31 +15,27 @@ describe('Funcionalidad: Crear draf', () => {
 
       // And fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
-
-
       cy.get('input.gh-input.password').type(Cypress.env('GHOST_PASSWORD'))
-
-      // And I click in the log in button
       cy.get('button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.ember-view').click()
       cy.wait(2000)
 
-
       // And I Wait for the dashboard to be visible
       cy.url().should('eq', Cypress.env('GHOST_DASHBOARD_URL'))
-      cy.wait(2000)
-  
 
       // And I go to the Drafts page
+      cy.wait(2000)
       cy.get('.gh-nav-viewname').eq(0).click()
- 
     })
-    it('Edit un draft', ()=>{
-      //When I edit the description of an existing draft 
-      cy.get('.ember-view.permalink.gh-list-data.gh-post-list-title').eq(0).click()
-      cy.wait(6000)
 
+    it('Crear un draft con una descripcion pseudoaleatoria con espacios', ()=>{
+      // When I create a new draft with a tittle and description
+      cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
+      cy.wait(3000)
 
-      cy.get('.kg-prose').type(dataPool.draft_description_edited)
+      cy.get('.gh-editor-title').type(dataPool.draft_valid_tittle)
+      cy.wait(3000)
+
+      cy.get('.kg-prose').type(dataPool.draft_valid_description)
       cy.wait(6000)
 
 
@@ -47,13 +43,9 @@ describe('Funcionalidad: Crear draf', () => {
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
       cy.wait(6000)
 
-      cy.get('.ember-view.permalink.gh-list-data.gh-post-list-title').eq(0).click()
-      cy.wait(6000)
 
-
-      //Then I expect to see the updated draft.
-      cy.get('.kg-prose').should('contain', dataPool.draft_description_edited);
-
+      //Then I expect to see the new draft.
+      cy.get('.draft').should('contain', 'Draft');
 
     })
-})
+  })

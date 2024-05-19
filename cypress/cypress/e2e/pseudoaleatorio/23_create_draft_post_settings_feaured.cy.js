@@ -3,6 +3,7 @@ describe('Funcionalidad: Crear draf', () => {
 
     Cypress.on('uncaught:exception', (err, runnable) => {
       if (err.message.includes('TransitionAborted')) {
+        // return false to prevent Cypress from failing the test
         return false;
       }
     });
@@ -19,6 +20,7 @@ describe('Funcionalidad: Crear draf', () => {
           dataPool = response.body;
       });
 
+
       // And fill input form with GHOST_USERNAME and GHOST_PASSWORD
       cy.get('input.gh-input.email').type(Cypress.env('GHOST_USERNAME'))
       cy.get('input.gh-input.password').type(Cypress.env('GHOST_PASSWORD'))
@@ -34,7 +36,7 @@ describe('Funcionalidad: Crear draf', () => {
       cy.wait(3000)
     })
 
-    it('Crear un draft', ()=>{
+    it('Crear un draft y destacarlo en configuraciones', ()=>{
       // When I create a new draft with a tittle and description
       cy.get('.ember-view.gh-btn.gh-btn-primary').eq(0).click()
       cy.wait(3000)
@@ -50,33 +52,16 @@ describe('Funcionalidad: Crear draf', () => {
       cy.get('.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon').eq(0).click()
       cy.wait(3000)
 
-      //And I go to x
-      cy.get('.nav-list-item').eq(4).click()
-      cy.wait(3000)
-
-      //And I edit x card description
-      cy.get('.post-setting-twitter-description.ember-text-area.gh-input.ember-view').type(dataPool.draft_valid_description)
+      // I click the switch to featured
+      cy.get('.switch').eq(0).click()
       cy.wait(6000)
 
       // And I go back to drafts page
       cy.get('.ember-view.gh-btn-editor.gh-editor-back-button').eq(0).click()
       cy.wait(3000)
 
-      //When I click in the existing draft
-      cy.get('.ember-view.permalink.gh-list-data.gh-post-list-title').eq(0).click()
-      cy.wait(6000)
-
-      // I go to drafts settings
-      cy.get('.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon').eq(0).click()
-      cy.wait(3000)
-
-      //And I go to x
-      cy.get('.nav-list-item').eq(4).click()
-      cy.wait(3000)
-
-      //Then I expect to see excerpt field fille
-      cy.get('.post-setting-twitter-description.ember-text-area.gh-input.ember-view').invoke('val').then((excerptText) => {
-        expect(excerptText).to.include(dataPool.draft_valid_description);
+      // Then I expect to see the updated featured draft.
+      cy.get('.gh-featured-post').should('exist');
     });
-    })
+    
   })
