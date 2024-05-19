@@ -16,7 +16,7 @@ describe('Funcionalidad: Crear tag', () => {
     cy.wait(5000)
 
     // And I load the pseudoaleatory datapool.
-    const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["TAGS"];
+    const url = Cypress.env('PSEUDO_ALEATORIO_DATAPOOLS')["DRAFT"];
     cy.request(url).then((response) => {
       dataPool = response.body;
     });
