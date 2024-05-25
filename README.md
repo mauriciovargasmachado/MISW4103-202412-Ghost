@@ -8,7 +8,11 @@ Este proyecto forma parte de una actividad del curso MISW41013 - Pruebas automat
 - [💻 Escenarios para pruebas de regresión](#Escenarios-para-pruebas-de-regresión)
 - [💻 Ejecutar pruebas VTR Resemble](#Ejecutar-pruebas-VTR-Resemble)
 - [💻 Ejecutar pruebas VTR Backstop](#Ejecutar-pruebas-VTR-Backstop)
-- [💻 Ejecutar pruebas con Generación de Datos‎ ‎ ](#Ejecutar-pruebas-con-Generación-de-Datos)     ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+- [💻 Ejecutar pruebas con Generación de Datos‎ ‎ ](#Ejecutar-pruebas-con-Generación-de-Datos) 
+- 🏆 Entrega Semana 08 ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+  - [Estrategia de pruebas](https://github.com/mpadillae/MISW4103-202412-Ghost/wiki/MISW4103_estrategia_semana_8.pdf) ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+  - [Inventario de pruebas exploratorias](https://github.com/mpadillae/MISW4103-202412-Ghost/wiki/MISW4103_Inventario_pruebas_exploratorias.pdf) ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
+  - [Enlace al video presentación final ](https://drive.google.com/file/d/1x_rnn0-D4Hl__yYF51vodjJfBo-UarEx/view?usp=sharing) ![](https://raw.githubusercontent.com/wiki/mpadillae/MISW4103-202412-Ghost/guide/update_badge.png)
 
 
 ---
